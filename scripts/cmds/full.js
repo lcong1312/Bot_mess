@@ -220,21 +220,41 @@ module.exports.onStart = async ({ api, event, args, usersData }) => {
         );
       }
 
-      try {
-        const responseMessage = (await axios.get(`${await baseApiUrl()}/api/hinata?text=${encodeURIComponent(message)}&style=3`)).data.message;
-        api.sendMessage(responseMessage, event.threadID, (err, info) => {
-          if (!err) {
-            global.GoatBot.onReply.set(info.messageID, {
-              commandName: "hinata",
-              type: "reply",
-              messageID: info.messageID,
-              author: event.senderID,
-            });
-          }
-        }, event.messageID);
-      } catch {
-        api.sendMessage("🥹 Lỗi rồi baby", event.threadID, event.messageID);
-      }
+      // Trả lời ngẫu nhiên bằng tiếng Việt thay vì dùng API
+      const chatReplies = [
+        "Em hiểu rồi 😊",
+        "Ừm, em nghe anh nói 😌",
+        "Anh nói gì vậy? 🤔",
+        "Em đồng ý với anh 👍",
+        "Thật à? Hay quá! 😄",
+        "Em cũng nghĩ vậy 💭",
+        "Anh đúng rồi đấy 😉",
+        "Để em suy nghĩ đã 🤔",
+        "Ồ, thú vị nhỉ! 😮",
+        "Em thích điều đó 😍",
+        "Anh giỏi quá! 👏",
+        "Em cũng vậy 🥰",
+        "Nghe hay đấy anh 😊",
+        "Em đang nghe anh nói đây 👂",
+        "Anh nói tiếp đi 😌",
+        "Wow, tuyệt vời! ✨",
+        "Em hiểu ý anh rồi 💡",
+        "Đúng vậy luôn! ✅",
+        "Em nghĩ anh nói đúng 🎯",
+        "Hay lắm anh ơi! 🌟"
+      ];
+      
+      const randomReply = chatReplies[Math.floor(Math.random() * chatReplies.length)];
+      api.sendMessage(randomReply, event.threadID, (err, info) => {
+        if (!err) {
+          global.GoatBot.onReply.set(info.messageID, {
+            commandName: "hinata",
+            type: "reply",
+            messageID: info.messageID,
+            author: event.senderID,
+          });
+        }
+      }, event.messageID);
     }
   } catch (err) {
     console.error(err);
@@ -246,7 +266,32 @@ module.exports.onReply = async ({ api, event }) => {
     let message = event.body?.trim(); if (!message) return;
     const commandWords = ["teach", "remove", "list", "edit", "msg"]; if (commandWords.some(cmd => message.toLowerCase().includes(cmd))) return;
     const prefix = global.GoatBot?.prefix || "!";  if (message.startsWith(prefix)) message = message.slice(prefix.length).trimStart();
-    const responseMessage = (await axios.get(`${await baseApiUrl()}/api/hinata?text=${encodeURIComponent(message)}&style=3`)).data.message;
+    
+    // Trả lời ngẫu nhiên bằng tiếng Việt
+    const chatReplies = [
+      "Ừ, em biết rồi 😊",
+      "Anh nói đúng đấy 👍",
+      "Em cũng nghĩ vậy 💭",
+      "Thật sao anh? 😮",
+      "Hay quá! 😄",
+      "Em đồng ý 💯",
+      "Nghe hợp lý đấy 🤔",
+      "Anh thông minh quá! 🧠",
+      "Em thích điều đó 😍",
+      "Đúng rồi anh ơi! ✅",
+      "Tuyệt vời! ✨",
+      "Em hiểu rồi 💡",
+      "Anh giỏi thật! 👏",
+      "Hay lắm! 🌟",
+      "Em cũng vậy 🥰",
+      "Anh nói tiếp đi 😌",
+      "Thú vị nhỉ! 🎯",
+      "Em nghe anh 👂",
+      "Ừm, được đấy 😉",
+      "Anh đúng rồi 💪"
+    ];
+    
+    const responseMessage = chatReplies[Math.floor(Math.random() * chatReplies.length)];
     api.sendMessage(responseMessage, event.threadID, (err, info) => {
       if (!err) {
         global.GoatBot.onReply.set(info.messageID, {
