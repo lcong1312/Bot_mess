@@ -17,13 +17,17 @@ module.exports = {
 		category: "economy",
 		guide: {
 			vi: "{pn} <@tag | uid> <số tiền>"
+				+ "\n   {pn} <số tiền> (cộng cho bản thân)"
 				+ "\n   Ví dụ:"
-				+ "\n    {pn} @tag 1000 (cộng 1000$)"
-				+ "\n    {pn} @tag -500 (trừ 500$)"
+				+ "\n    {pn} @tag 1000 (cộng 1000$ cho người được tag)"
+				+ "\n    {pn} @tag -500 (trừ 500$ của người được tag)"
+				+ "\n    {pn} 1000 (cộng 1000$ cho bản thân)"
 				+ "\n    {pn} 100057376711750 5000",
 			en: "{pn} <@tag | uid> <amount>"
+				+ "\n   {pn} <amount> (add to yourself)"
 				+ "\n   Example:"
 				+ "\n    {pn} @tag 1000"
+				+ "\n    {pn} 1000 (add to yourself)"
 		}
 	},
 
@@ -52,14 +56,20 @@ module.exports = {
 		let amountIndex = 1; // Vị trí của số tiền trong args
 		
 		if (Object.keys(mentions).length > 0) {
+			// Có tag người dùng
 			targetID = Object.keys(mentions)[0];
 			// Khi có mention, số tiền sẽ ở cuối cùng
 			amountIndex = args.length - 1;
+		} else if (args[0] && !isNaN(parseInt(args[0]))) {
+			// Không có tag, chỉ có số tiền -> cộng cho bản thân
+			targetID = senderID;
+			amountIndex = 0;
 		} else if (args[0]) {
+			// Có uid
 			targetID = args[0];
 			amountIndex = 1;
 		} else {
-			return message.reply(getLang("missingTarget"));
+			return message.reply(getLang("missingAmount").replace("{pn}", `/${commandName}`));
 		}
 
 		// Kiểm tra số tiền

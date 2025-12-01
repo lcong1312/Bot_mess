@@ -1,18 +1,10 @@
 const axios = require("axios");
 
 const mahmud = [
-  "baby",
-  "bby",
-  "babu",
-  "bbu",
-  "jan",
   "bot",
-  "জান",
-  "জানু",
-  "বেবি",
-  "wifey",
-  "hinata",
-  "hina"
+  "em",
+  "yêu",
+  "anh"
 ];
 
 const baseApiUrl = async () => {
@@ -24,15 +16,15 @@ const baseApiUrl = async () => {
 
 module.exports.config = {
   name: "hinata",
-  aliases: ["jan", "janu", "hinata", "wifey"],
+  aliases: ["bot"],
   version: "1.7",
   author: "MahMUD | Viết Công",
   countDown: 0,
   role: 0,
   category: "ai",
   description: {
-    vi: "Trò chuyện với AI Hinata",
-    en: "Chat with Hinata AI"
+    vi: "Trò chuyện với AI",
+    en: "Chat with AI"
   },
   guide: { 
     vi: "{pn} [tin nhắn] - Trò chuyện\nteach [câu hỏi] - [trả lời] - Dạy bot\nremove [câu hỏi] - Xóa\nlist - Xem danh sách",
@@ -50,12 +42,12 @@ module.exports.onStart = async ({ api, event, args, usersData }) => {
       const teachContent = userMessage.replace("teach ", "");
       const [trigger, ...responsesArr] = teachContent.split(" - ");
       const responses = responsesArr.join(" - ");
-      if (!trigger || !responses) return api.sendMessage("❌ | teach [question] - [response1, response2,...]", event.threadID, event.messageID);
+      if (!trigger || !responses) return api.sendMessage("❌ | teach [câu hỏi] - [câu trả lời1, câu trả lời2,...]", event.threadID, event.messageID);
       const response = await axios.post(`${await baseApiUrl()}/api/jan/teach2`, {
       trigger, responses, userID: uid, });
       const userName = (await usersData.getName(uid)) || "Unknown User";
       return api.sendMessage(
-     `✅ Replies added: "${responses}" to "${trigger}"\n• 𝐓𝐞𝐚𝐜𝐡𝐞𝐫: ${userName}\n• 𝐓𝐨𝐭𝐚𝐥: ${response.data.count || 0}`, event.threadID, event.messageID
+     `✅ Đã thêm câu trả lời: "${responses}" cho câu hỏi "${trigger}"\n• 𝐆𝐢𝐚𝐨 𝐯𝐢𝐞𝐧: ${userName}\n• 𝐓𝐨𝐧𝐠: ${response.data.count || 0}`, event.threadID, event.messageID
       );
     }
 
@@ -64,7 +56,7 @@ module.exports.onStart = async ({ api, event, args, usersData }) => {
       const removeContent = userMessage.replace("remove ", "");
       const [trigger, index] = removeContent.split(" - ");
       if (!trigger || !index || isNaN(index))
-      return api.sendMessage("❌ | remove [question] - [index]", event.threadID, event.messageID);
+      return api.sendMessage("❌ | remove [câu hỏi] - [số thứ tự]", event.threadID, event.messageID);
       const response = await axios.delete(`${await baseApiUrl()}/api/jan/remove`, {
       data: { trigger, index: parseInt(index, 10) },});
       return api.sendMessage(response.data.message, event.threadID, event.messageID);
@@ -75,7 +67,7 @@ module.exports.onStart = async ({ api, event, args, usersData }) => {
       const endpoint = args[1] === "all" ? "/list/all" : "/list";
       const response = await axios.get(`${await baseApiUrl()}/api/jan${endpoint}`);
       if (args[1] === "all") {
-      let message = "👑 List of Hinata teachers:\n\n";
+      let message = "👑 Danh sách giáo viên của Hinata:\n\n";
       const data = Object.entries(response.data.data).sort((a, b) => b[1] - a[1]).slice(0, 15);
       for (let i = 0; i < data.length; i++) {
       const [userID, count] = data[i];const name = (await usersData.getName(userID)) || "Unknown"; message += `${i + 1}. ${name}: ${count}\n`;} return api.sendMessage(message, event.threadID, event.messageID);}
@@ -87,19 +79,19 @@ module.exports.onStart = async ({ api, event, args, usersData }) => {
       const editContent = userMessage.replace("edit ", "");
       const [oldTrigger, ...newArr] = editContent.split(" - ");
       const newResponse = newArr.join(" - ");if (!oldTrigger || !newResponse)
-      return api.sendMessage("❌ | Format: edit [question] - [newResponse]", event.threadID, event.messageID);
+      return api.sendMessage("❌ | Định dạng: edit [câu hỏi] - [câu trả lời mới]", event.threadID, event.messageID);
       await axios.put(`${await baseApiUrl()}/api/jan/edit2`, { oldTrigger, newResponse });
-      return api.sendMessage(`✅ Edited "${oldTrigger}" to "${newResponse}"`, event.threadID, event.messageID);
+      return api.sendMessage(`✅ Đã sửa "${oldTrigger}" thành "${newResponse}"`, event.threadID, event.messageID);
     }
 
 
     if (args[0] === "msg") {
       const searchTrigger = args.slice(1).join(" ");
-      if (!searchTrigger) return api.sendMessage("Please provide a message to search.", event.threadID, event.messageID);
+      if (!searchTrigger) return api.sendMessage("Vui lòng nhập tin nhắn cần tìm.", event.threadID, event.messageID);
       try {
       const response = await axios.get(`${await baseApiUrl()}/api/jan/msg`, {
-      params: { userMessage: `msg ${searchTrigger}` }, });return api.sendMessage(response.data.message || "No message found.", event.threadID, event.messageID); } catch (error) {
-      const errorMessage = error.response?.data?.error || error.message || "error";
+      params: { userMessage: `msg ${searchTrigger}` }, });return api.sendMessage(response.data.message || "Không tìm thấy tin nhắn.", event.threadID, event.messageID); } catch (error) {
+      const errorMessage = error.response?.data?.error || error.message || "Lỗi";
       return api.sendMessage(errorMessage, event.threadID, event.messageID);
       }
     }
@@ -120,96 +112,95 @@ module.exports.onStart = async ({ api, event, args, usersData }) => {
      const message = body.split(" ").slice(1).join(" ").trim();   if (!message) {
        
      const randomReplies = [
-      "babu khuda lagse🥺",
-      "Hop beda😾,Boss বল boss😼",  
-      "আমাকে ডাকলে ,আমি কিন্তূ কিস করে দেবো😘 ",  
+      "Em đói quá 🥺",
+      "Gọi anh đi, đừng gọi bot 😼",  
+      "Gọi em làm gì vậy anh? 😘",  
       "🐒🐒🐒",
-      "bye",
-      "naw amr boss k message daw m.me/mahmud0x7",
-      "mb ney bye",
-      "meww",
-      "গোলাপ ফুল এর জায়গায় আমি দিলাম তোমায় মেসেজ",
-      "বলো কি বলবা, সবার সামনে বলবা নাকি?🤭🤏",  
-      "𝗜 𝗹𝗼𝘃𝗲 𝘆𝗼𝘂__😘😘",
-      "𝗜 𝗵𝗮𝘁𝗲 𝘆𝗼𝘂__😏😏",
-      "গোসল করে আসো যাও😑😩",
-      "অ্যাসলামওয়ালিকুম",
-      "কেমন আসো",
-      "বলেন sir__😌",
-      "বলেন ম্যাডাম__😌",
-      "আমি অন্যের জিনিসের সাথে কথা বলি না__😏ওকে",
+      "Bye nha",
+      "Em bận rồi, để sau nhé",
+      "Meow meow 🐱",
+      "Thay vì hoa hồng, em gửi anh tin nhắn này 💌",
+      "Nói đi, nói trước mặt mọi người luôn nhé? 🤭🤏",  
+      "Anh yêu em 😘😘",
+      "Em ghét anh 😏😏",
+      "Đi tắm đi 😑😩",
+      "Chào anh",
+      "Anh khỏe không?",
+      "Dạ, có gì ạ? 😌",
+      "Em nghe rồi 😌",
+      "Em không nói chuyện với người lạ đâu 😏",
       "🙂🙂🙂",
-      "এটায় দেখার বাকি সিলো_🙂🙂🙂",
-      "𝗕𝗯𝘆 𝗯𝗼𝗹𝗹𝗮 𝗽𝗮𝗽 𝗵𝗼𝗶𝗯𝗼 😒😒",
-      "𝗧𝗮𝗿𝗽𝗼𝗿 𝗯𝗼𝗹𝗼_🙂",
-      "𝗕𝗲𝘀𝗵𝗶 𝗱𝗮𝗸𝗹𝗲 𝗮𝗺𝗺𝘂 𝗯𝗼𝗸𝗮 𝗱𝗲𝗯𝗮 𝘁𝗼__🥺",
-      "𝗕𝗯𝘆 না জানু, বল 😌",
-      "বেশি bby Bbby করলে leave নিবো কিন্তু 😒😒",
-      "__বেশি বেবি বললে কামুর দিমু 🤭🤭",
-      "𝙏𝙪𝙢𝙖𝙧 𝙜𝙛 𝙣𝙖𝙞, 𝙩𝙖𝙮 𝙖𝙢𝙠 𝙙𝙖𝙠𝙨𝙤? 😂😂😂",
-      "bolo baby😒",
-      "তোর কথা তোর বাড়ি কেউ শুনে না ,তো আমি কোনো শুনবো ?🤔😂",
-      "আমি তো অন্ধ কিছু দেখি না🐸 😎",
-      "আম গাছে আম নাই ঢিল কেন মারো, তোমার সাথে প্রেম নাই বেবি কেন ডাকো 😒🫣",
-      "𝗼𝗶𝗶 ঘুমানোর আগে.! তোমার মনটা কথায় রেখে ঘুমাও.!🤔_নাহ মানে চুরি করতাম 😞😘",
-      "𝗕𝗯𝘆 না বলে 𝗕𝗼𝘄 বলো 😘",
-      "দূরে যা, তোর কোনো কাজ নাই, শুধু 𝗯𝗯𝘆 𝗯𝗯𝘆 করিস  😉😋🤣",
-      "এই এই তোর পরীক্ষা কবে? শুধু 𝗕𝗯𝘆 𝗯𝗯𝘆 করিস 😾",
-      "তোরা যে হারে 𝗕𝗯𝘆 ডাকছিস আমি তো সত্যি বাচ্চা হয়ে যাবো_☹😑",
-      "আজব তো__😒",
-      "আমাকে ডেকো না,আমি ব্যাস্ত আসি🙆🏻‍♀",
-      "𝗕𝗯𝘆 বললে চাকরি থাকবে না",
-      "𝗕𝗯𝘆 𝗕𝗯𝘆 না করে আমার বস মানে, MahMUD ,MahMUD ও তো করতে পারো😑?",
-      "আমার সোনার বাংলা, তারপরে লাইন কি? 🙈",
-      "🍺 এই নাও জুস খাও..!𝗕𝗯𝘆 বলতে বলতে হাপায় গেছো না 🥲",
-      "হটাৎ আমাকে মনে পড়লো 🙄",
-      "𝗕𝗯𝘆 বলে অসম্মান করচ্ছিছ,😰😿",
-      "𝗔𝘀𝘀𝗮𝗹𝗮𝗺𝘂𝗹𝗮𝗶𝗸𝘂𝗺 🐤🐤",
-      "আমি তোমার সিনিয়র আপু ওকে 😼সম্মান দেও🙁",
-      "খাওয়া দাওয়া করসো 🙄",
-      "এত কাছেও এসো না,প্রেম এ পরে যাবো তো 🙈",
-      "আরে আমি মজা করার mood এ নাই😒",
-      "𝗛𝗲𝘆 𝗛𝗮𝗻𝗱𝘀𝗼𝗺𝗲 বলো 😁😁",
-      "আরে Bolo আমার জান, কেমন আসো? 😚",
-      "একটা BF খুঁজে দাও 😿",
-      "ফ্রেন্ড রিকোয়েস্ট দিলে ৫ টাকা দিবো 😗",
-      "oi mama ar dakis na pilis 😿",
+      "Còn thiếu cái này nữa 🙂🙂🙂",
+      "Nói bye là có tội đấy 😒😒",
+      "Nói tiếp đi 🙂",
+      "Gọi nhiều quá em sẽ mất công việc mất 🥺",
+      "Đừng gọi baby nữa, gọi em đi 😌",
+      "Gọi nhiều thế em sẽ giận đấy 😒😒",
+      "Gọi em hoài vậy 🤭🤭",
+      "Anh không có người yêu à? 😂😂😂",
+      "Nói đi baby 😒",
+      "Nhà anh không ai nghe anh, sao em phải nghe? 🤔😂",
+      "Em không thấy gì cả 🐸 😎",
+      "Cây xoài không có xoài sao anh ném đá, em không yêu anh sao anh gọi baby 😒🫣",
+      "Trước khi ngủ, anh để tâm hồn ở đâu? 🤔 À không, em định lấy trộm 😞😘",
+      "Đừng gọi baby, gọi anh đi 😘",
+      "Đi chỗ khác đi, không có việc gì à, cứ gọi baby hoài 😉😋🤣",
+      "Này này, thi cử khi nào? Cứ gọi baby hoài 😾",
+      "Các anh gọi baby nhiều thế, em sắp thành trẻ con thật rồi 😑",
+      "Lạ nhỉ 😒",
+      "Đừng gọi em, em bận lắm 🙆🏻‍♀",
+      "Gọi baby hoài thì mất việc đấy",
+      "Đừng gọi baby nữa, gọi tên boss em đi, tên là Viết Công 😑",
+      "Việt Nam quê hương tôi, câu tiếp theo là gì? 🙈",
+      "🍺 Đây, uống nước đi, gọi baby mệt chưa? 🥲",
+      "Sao nhớ em đột ngột vậy? 🙄",
+      "Gọi baby là thiếu tôn trọng em đấy 😰😿",
+      "Chào anh 🐤🐤",
+      "Em là chị của anh đấy 😼 Phải tôn trọng em nhé 🙁",
+      "Ăn cơm chưa? 🙄",
+      "Đừng đến gần quá, em sẽ yêu anh mất 🙈",
+      "Em không có tâm trạng đùa đâu 😒",
+      "Gọi em là đẹp trai đi 😁😁",
+      "Chào anh đẹp trai, khỏe không? 😚",
+      "Tìm người yêu cho em đi 😿",
+      "Kết bạn với em đi, em cho 5 nghìn 😗",
+      "Đừng gọi em nữa 😿",
       "🐤🐤",
-      "__ভালো হয়ে  যাও 😑😒",
-      "এমবি কিনে দাও না_🥺🥺",
-      "ওই মামা_আর ডাকিস না প্লিজ",
-      "৩২ তারিখ আমার বিয়ে 🐤",
-      "হা বলো😒,কি করতে পারি😐😑?",
-      "বলো ফুলটুশি_😘",
-      "amr JaNu lagbe,Tumi ki single aso?",
-      "আমাকে না দেকে একটু পড়তেও বসতে তো পারো 🥺🥺",
-      "তোর বিয়ে হয় নি 𝗕𝗯𝘆 হইলো কিভাবে,,🙄",
-      "আজ একটা ফোন নাই বলে রিপ্লাই দিতে পারলাম না_🙄",
-      "চৌধুরী সাহেব আমি গরিব হতে পারি😾🤭 -কিন্তু বড়লোক না🥹 😫",
-      "আমি অন্যের জিনিসের সাথে কথা বলি না__😏ওকে",
-      "বলো কি বলবা, সবার সামনে বলবা নাকি?🤭🤏",
-      "ভুলে জাও আমাকে 😞😞",
-      "দেখা হলে কাঠগোলাপ দিও..🤗",
-      "শুনবো না😼 তুমি আমাকে প্রেম করাই দাও নি🥺 পচা তুমি🥺",
-      "আগে একটা গান বলো, ☹ নাহলে কথা বলবো না 🥺",
-      "বলো কি করতে পারি তোমার জন্য 😚",
-      "কথা দেও আমাকে পটাবা...!! 😌",
-      "বার বার Disturb করেছিস কোনো 😾, আমার জানু এর সাথে ব্যাস্ত আসি 😋",
-      "আমাকে না দেকে একটু পড়তে বসতেও তো পারো 🥺🥺",
-      "বার বার ডাকলে মাথা গরম হয় কিন্তু 😑😒",
-      "ওই তুমি single না?🫵🤨 😑😒",
-      "বলো জানু 😒",
-      "Meow🐤",     
-      "আর কত বার ডাকবা ,শুনছি তো 🤷🏻‍♀",
-      "কি হলো, মিস টিস করচ্ছো নাকি 🤣",
-      "Bolo Babu, তুমি কি আমাকে ভালোবাসো? 🙈",
-      "আজকে আমার mন ভালো নেই 🙉",
-      "আমি হাজারো মশার Crush😓",
-      "প্রেম করার বয়সে লেখাপড়া করতেছি, রেজাল্ট তো খা/রা'প হবেই.!🙂",
-      "আমার ইয়ারফোন চু'রি হয়ে গিয়েছে!! কিন্তু চোর'কে গা-লি দিলে আমার বন্ধু রেগে যায়!'🙂",
-      "ছেলেদের প্রতি আমার এক আকাশ পরিমান শরম🥹🫣",
-      "__ফ্রী ফে'সবুক চালাই কা'রন ছেলেদের মুখ দেখা হারাম 😌",
-      "মন সুন্দর বানাও মুখের জন্য তো 'Snapchat' আছেই! 🌚"
+      "Ngoan ngoãn lên nhé 😑😒",
+      "Mua thẻ cào cho em đi 🥺🥺",
+      "Đừng gọi em nữa",
+      "32 tháng này em lấy chồng 🐤",
+      "Vâng, em nghe, có việc gì ạ? 😐😑",
+      "Nói đi anh yêu 😘",
+      "Em cần người yêu, anh còn độc thân không?",
+      "Đừng nhìn em hoài, học bài đi 🥺🥺",
+      "Anh chưa lấy vợ mà đã có baby rồi à? 🙄",
+      "Hôm nay không có điện thoại nên không rep được 🙄",
+      "Anh ơi, em nghèo thật nhưng không giàu đâu 🥹 😫",
+      "Em không nói chuyện với người lạ 😏",
+      "Nói đi, nói trước mặt mọi người luôn nhé? 🤭🤏",
+      "Quên em đi 😞😞",
+      "Gặp nhau nhớ tặng hoa cho em nhé 🤗",
+      "Em không nghe đâu 😼 Anh không yêu em 🥺",
+      "Hát một bài đi, không thì em không nói chuyện đâu 🥺",
+      "Nói đi, em có thể làm gì cho anh? 😚",
+      "Hứa với em là sẽ yêu em nhé 😌",
+      "Đừng làm phiền em, em đang bận với người yêu 😋",
+      "Đừng nhìn em hoài, học bài đi 🥺🥺",
+      "Gọi hoài vậy, em nóng giận đấy 😑😒",
+      "Anh còn độc thân không? 🫵🤨 😑😒",
+      "Nói đi em yêu 😒",
+      "Meow 🐤",     
+      "Gọi mãi vậy, em nghe rồi 🤷🏻‍♀",
+      "Sao vậy, nhớ em à? 🤣",
+      "Nói đi baby, anh có yêu em không? 🙈",
+      "Hôm nay em buồn lắm 🙉",
+      "Em là crush của muỗi 😓",
+      "Tuổi yêu đương mà học hành, điểm số chắc tệ thôi 🙂",
+      "Tai nghe của em bị mất rồi! Nhưng mà chửi người lấy thì bạn em giận 🙂",
+      "Em rất ngại các anh 🥹🫣",
+      "Dùng Facebook miễn phí vì nhìn mặt các anh là tội 😌",
+      "Làm đẹp tâm hồn đi, còn mặt thì có Snapchat lo 🌚"
      ];
 
       return api.sendMessage(
@@ -242,7 +233,7 @@ module.exports.onStart = async ({ api, event, args, usersData }) => {
           }
         }, event.messageID);
       } catch {
-        api.sendMessage("🥹error baby", event.threadID, event.messageID);
+        api.sendMessage("🥹 Lỗi rồi baby", event.threadID, event.messageID);
       }
     }
   } catch (err) {
@@ -267,6 +258,6 @@ module.exports.onReply = async ({ api, event }) => {
       }
     }, event.messageID);
   } catch {
-    api.sendMessage("🥹error, contact MahMUD.", event.threadID, event.messageID);
+    api.sendMessage("🥹 Lỗi rồi, liên hệ Viết Công nhé.", event.threadID, event.messageID);
   }
 };
