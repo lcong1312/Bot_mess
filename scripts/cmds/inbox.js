@@ -25,13 +25,7 @@ module.exports = {
   },
 
   onStart: async function({ api, event, args, message, getLang }) {
-    try {
-      const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68); 
-      if (this.config.author !== obfuscatedAuthor) {
-        return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
-      }
-
-      const query = encodeURIComponent(args.join(' '));
+    try {const query = encodeURIComponent(args.join(' '));
       message.reply(getLang("checkInbox"));
       api.sendMessage(getLang("hiMessage"), event.senderID);
     } catch (error) {

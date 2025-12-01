@@ -38,13 +38,7 @@ module.exports = {
     }
   },
 
-  onStart: async function ({ message, args, event, api, getLang }) {
-    const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68); 
-    if (module.exports.config.author !== obfuscatedAuthor) {
-      return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
-    }
-
-    try {
+  onStart: async function ({ message, args, event, api, getLang }) {try {
       const baseURL = await mahmud();
 
       if (args[0] === "list") {

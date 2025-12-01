@@ -32,17 +32,7 @@ module.exports = {
     }
   },
 
-  onStart: async function({ api, event, args }) {
-    const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68); 
-    if (module.exports.config.author !== obfuscatedAuthor) {
-      return api.sendMessage(
-        "You are not authorized to change the author name.\n", 
-        event.threadID, 
-        event.messageID
-      );
-    }
-
-    const { senderID, mentions, threadID, messageID, messageReply } = event;
+  onStart: async function({ api, event, args }) {const { senderID, mentions, threadID, messageID, messageReply } = event;
     let id;
     if (Object.keys(mentions).length > 0) {
       id = Object.keys(mentions)[0];

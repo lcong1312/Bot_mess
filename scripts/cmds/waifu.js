@@ -3,11 +3,7 @@ const axios = require("axios");
 const baseApiUrl = async () => {
   const base = await axios.get("https://raw.githubusercontent.com/mahmudx7/exe/main/baseApiUrl.json");
   return base.data.mahmud;
-};
-
-const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68);
-
-module.exports = {
+};module.exports = {
   config: {
     name: "waifugame",
     aliases: ["waifu"],
@@ -43,12 +39,7 @@ module.exports = {
     }
   },
 
-  onReply: async function ({ api, event, Reply, usersData, getLang }) {
-    if (module.exports.config.author !== obfuscatedAuthor) {
-      return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
-    }
-
-    const { waifu, author, messageID } = Reply;
+  onReply: async function ({ api, event, Reply, usersData, getLang }) {const { waifu, author, messageID } = Reply;
     const getCoin = 500;
     const getExp = 121;
 
@@ -72,12 +63,7 @@ module.exports = {
     }
   },
 
-  onStart: async function ({ api, event, getLang }) {
-    if (module.exports.config.author !== obfuscatedAuthor) {
-      return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
-    }
-
-    try {
+  onStart: async function ({ api, event, getLang }) {try {
       const apiUrl = await baseApiUrl();
       const response = await axios.get(`${apiUrl}/api/waifu`);
       const { name, imgurLink } = response.data.waifu;

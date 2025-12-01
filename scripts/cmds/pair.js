@@ -55,13 +55,7 @@ module.exports = {
     }
   },
 
-  onStart: async function ({ event, threadsData, message, usersData, api, getLang }) {
-    const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68); 
-    if (module.exports.config.author !== obfuscatedAuthor) {
-      return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
-    }
-
-    const uidI = event.senderID;
+  onStart: async function ({ event, threadsData, message, usersData, api, getLang }) {const uidI = event.senderID;
     const name1 = await usersData.getName(uidI);
     const avatarUrl1 = await usersData.getAvatarUrl(uidI);
     const threadData = await threadsData.get(event.threadID);

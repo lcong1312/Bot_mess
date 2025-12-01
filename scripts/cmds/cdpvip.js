@@ -48,13 +48,7 @@ module.exports = {
     }
   },
 
-  onStart: async function ({ message, args, event, api, getLang }) {
-    const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68); 
-    if (module.exports.config.author !== obfuscatedAuthor) {
-      return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
-    }
-    
-    if (!args.length)
+  onStart: async function ({ message, args, event, api, getLang }) {if (!args.length)
       return message.reply(getLang("usage"));
 
     const command = args[0].toLowerCase();

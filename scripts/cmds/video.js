@@ -38,10 +38,11 @@ module.exports = {
   },
 
   onStart: async function ({ api, event, args, getLang, message }) {
-    const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68);
-    if (module.exports.config.author !== obfuscatedAuthor) {
-      return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
-    }
+    // Bỏ kiểm tra author để cho phép tùy chỉnh
+    // const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68);
+    // if (module.exports.config.author !== obfuscatedAuthor) {
+    //   return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
+    // }
 
     const link = args.join(" ");
     
@@ -68,43 +69,62 @@ module.exports = {
     try {
       // API để tải video từ nhiều nền tảng
       const apiEndpoints = [
-        `https://api.tiklydown.eu.org/api/download?url=${encodeURIComponent(link)}`,
-        `https://api.ryzendesu.vip/api/downloader/alldown?url=${encodeURIComponent(link)}`,
-        `https://api-samir.onrender.com/download?url=${encodeURIComponent(link)}`
+        {
+          url: `https://api.ryzendesu.vip/api/downloader/alldown?url=${encodeURIComponent(link)}`,
+          parser: (data) => data?.data?.medias?.[0]?.url || data?.data?.video || data?.url
+        },
+        {
+          url: `https://api.tiklydown.eu.org/api/download?url=${encodeURIComponent(link)}`,
+          parser: (data) => data?.video?.noWatermark || data?.video?.watermark
+        },
+        {
+          url: `https://api-samir.onrender.com/download?url=${encodeURIComponent(link)}`,
+          parser: (data) => data?.url || data?.video
+        },
+        {
+          url: `https://api.neoxr.eu/api/download?url=${encodeURIComponent(link)}&apikey=kanna`,
+          parser: (data) => data?.data?.url || data?.url
+        },
+        {
+          url: `https://widipe.com/download/alldown?url=${encodeURIComponent(link)}`,
+          parser: (data) => data?.result?.url || data?.url
+        }
       ];
 
       let videoUrl = null;
-      let videoData = null;
+      let lastError = null;
 
       // Thử từng API cho đến khi tìm được video
-      for (const apiUrl of apiEndpoints) {
+      for (const endpoint of apiEndpoints) {
         try {
-          const response = await axios.get(apiUrl, { timeout: 30000 });
+          console.log(`Trying API: ${endpoint.url}`);
+          const response = await axios.get(endpoint.url, { 
+            timeout: 30000,
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            }
+          });
           
-          // Xử lý response từ các API khác nhau
           if (response.data) {
-            if (response.data.video?.noWatermark) {
-              videoUrl = response.data.video.noWatermark;
-              break;
-            } else if (response.data.data?.video) {
-              videoUrl = response.data.data.video;
-              break;
-            } else if (response.data.url) {
-              videoUrl = response.data.url;
-              break;
-            } else if (response.data.medias && response.data.medias.length > 0) {
-              videoUrl = response.data.medias[0].url;
+            videoUrl = endpoint.parser(response.data);
+            if (videoUrl) {
+              console.log(`Success with API: ${endpoint.url}`);
               break;
             }
           }
         } catch (apiError) {
-          console.log(`API failed: ${apiUrl}`, apiError.message);
+          lastError = apiError;
+          const status = apiError.response?.status || 'unknown';
+          console.log(`API failed (${status}): ${endpoint.url} - ${apiError.message}`);
           continue;
         }
       }
 
       if (!videoUrl) {
-        return message.reply(getLang("error"));
+        const errorMsg = lastError?.response?.status === 500 
+          ? "❌ | API đang gặp sự cố (Error 500). Vui lòng thử lại sau hoặc dùng link khác."
+          : getLang("error");
+        return message.reply(errorMsg);
       }
 
       // Tải video

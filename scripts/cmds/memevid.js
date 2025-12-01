@@ -40,13 +40,7 @@ module.exports = {
     }
   },
 
-  onStart: async function ({ api, event, getLang }) {
-    const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68); 
-    if (module.exports.config.author !== obfuscatedAuthor) {
-      return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
-    }
-    
-    try {
+  onStart: async function ({ api, event, getLang }) {try {
       const apiUrl = await mahmud();
       const res = await axios.get(`${apiUrl}/api/album/videos/meme?userID=${event.senderID}`);
       if (!res.data.success || !res.data.videos.length)

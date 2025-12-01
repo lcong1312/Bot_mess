@@ -44,13 +44,7 @@ module.exports = {
     }
   },
 
-  onStart: async function ({ api, event, usersData, getLang }) {
-    const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68); 
-    if (module.exports.config.author !== obfuscatedAuthor) {
-      return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
-    }
-
-    const { senderID, threadID, messageID } = event;
+  onStart: async function ({ api, event, usersData, getLang }) {const { senderID, threadID, messageID } = event;
 
     let quiz;
     try {

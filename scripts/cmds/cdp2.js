@@ -37,13 +37,7 @@ module.exports = {
     }
   },
 
-  onStart: async function ({ message, event, api, getLang }) {
-    const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68); 
-    if (module.exports.config.author !== obfuscatedAuthor) {
-      return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
-    }
-
-    try {
+  onStart: async function ({ message, event, api, getLang }) {try {
       const response = await axios.get(`${await baseApiUrl()}/api/cdp2`, {
         headers: { "author": module.exports.config.author }
       });

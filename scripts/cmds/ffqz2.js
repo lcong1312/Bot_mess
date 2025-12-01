@@ -44,12 +44,7 @@ module.exports = {
   },
 
   onStart: async function ({ api, event, usersData, args, getLang }) {
-    try {
-      const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68); 
-      if (module.exports.config.author !== obfuscatedAuthor) {
-        return api.sendMessage("Bạn không được phép thay đổi tên tác giả.", event.threadID, event.messageID);
-      }
-      const input = args[0]?.toLowerCase() || "bn";
+    try {const input = args[0]?.toLowerCase() || "bn";
       const category = (input === "en" || input === "english") ? "english" : "bangla";
 
       const apiUrl = await mahmud();
