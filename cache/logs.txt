@@ -1,0 +1,283 @@
+[DEBUG] 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐁𝐨𝐭...
+📡 Web server running at http://localhost:3000
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ]2;Goat Bot V2 - Made by NTKhang\
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ─
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] 
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] GOATBOT V2
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] GoatBot V2@1.5.35- A simple Bot chat messenger use personal account
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Created by NTKhang | Viết Công with ♡
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Source code: 
+ALL VERSIONS NOT RELEASED HERE ARE FAKE
+[38;2;245;171;0m START LOGGING IN [0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:56:57 01/12/2025[0m [92m LOGIN FACEBOOK:[0m Đang tiến hành đăng nhập
+[CMD LOADING] - Đang đăng nhập bằng cookie array
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:00 01/12/2025[0m [93m REFRESH COOKIE:[0m Bạn đã bật chế độ tự động làm mới cookie, nhưng bạn chưa cấu hình email và mật khẩu trong file config.json
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:00 01/12/2025[0m [92m LOGIN FACEBOOK:[0m Đăng nhập thành công
+[38;2;245;171;0m BOT INFO [0m
+[90m13:57:00 01/12/2025[0m [92m NODE VERSION:[0m v16.20.2
+[90m13:57:00 01/12/2025[0m [92m PROJECT VERSION:[0m 1.5.35
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:00 01/12/2025[0m [92m BOT ID:[0m 100095121630849 - null
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:00 01/12/2025[0m [92m PREFIX:[0m /
+[90m13:57:00 01/12/2025[0m [92m LANGUAGE:[0m vi
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:00 01/12/2025[0m [92m BOT NICK NAME:[0m Bot name
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:01 01/12/2025[0m [92m REFRESH FBSTATE:[0m Đã làm mới file account.txt
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] DATABASE
+[CMD LOADING] - Đang kết nối cơ sở dữ liệu MONGODB
+[CMD LOADING] (node:12552) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:02 01/12/2025[0m [92m MONGODB:[0m Đã kết nối cơ sở dữ liệu Mongodb thành công!
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:05 01/12/2025[0m [92m DATABASE:[0m Đã tải xong dữ liệu của 140 nhóm!
+[90m13:57:05 01/12/2025[0m [92m DATABASE:[0m Đã tải xong dữ liệu của 1586 người dùng!
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m LOAD COMMANDS [0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m1[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m2[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m3[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m4[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m5[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m6[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m7[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m8[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m9[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m10[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m11[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m12[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m13[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m14[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m15[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m16[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m17[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m18[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m19[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m20[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m21[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m22[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m23[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m24[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m25[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m26[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m27[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m28[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m29[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m30[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m31[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m32[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m33[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m34[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m35[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m36[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m37[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m38[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m39[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m40[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m41[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m42[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m43[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m44[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m45[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m46[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m47[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m48[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m49[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m50[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m51[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m52[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m53[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m54[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m55[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m56[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m57[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m58[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m59[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m60[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m61[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m62[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m63[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m64[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m65[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m66[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m67[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m68[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m69[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m70[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m71[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m72[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m73[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m74[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m75[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m76[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m77[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m78[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m79[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m80[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m81[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m82[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m83[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m84[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m85[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m86[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m87[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m88[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m89[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m90[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m91[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m92[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m93[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m94[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m95[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m96[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m97[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m98[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m99[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m100[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m101[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m102[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m103[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m104[0m
+[CMD LOADING] [90m13:57:05 01/12/2025[0m [92m LOADED:[0m [32m105[0m
+[CMD LOADING] [90m13:57:06 01/12/2025[0m [92m LOADED:[0m [32m106[0m
+[CMD LOADING] [90m13:57:06 01/12/2025[0m [92m LOADED:[0m [32m107[0m
+[CMD LOADING] [90m13:57:06 01/12/2025[0m [92m LOADED:[0m [32m108[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m109[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m110[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m111[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m112[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m113[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m114[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m115[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m116[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m117[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m118[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m119[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m120[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m121[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m122[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m123[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m124[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m125[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m LOAD COMMANDS EVENT [0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m1[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m1[0m, [31m1[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m2[0m, [31m1[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m3[0m, [31m1[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m4[0m, [31m1[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m5[0m, [31m1[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m6[0m, [31m1[0m
+[CMD LOADING] [90m13:57:07 01/12/2025[0m [92m LOADED:[0m [32m7[0m, [31m1[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:07 01/12/2025[0m [91m LOADED:[0m Những file [33mevent command[0m xảy ra lỗi trong quá trình load:
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [31m✖ autoSetNickname.js[0m: Unexpected end of input
+ D:\bot mess\Goat-bot-V2-\scripts\events\autoSetNickname.js:23
+
+
+
+SyntaxError: Unexpected end of input
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at module.exports (D:\bot mess\Goat-bot-V2-\bot\login\loadScripts.js:117:21)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m DASHBOARD [0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:08 01/12/2025[0m [92m DASHBOARD:[0m Dashboard is running: http://localhost:3001
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:08 01/12/2025[0m [92m SOCKET IO:[0m Đã khởi tạo server socket.io thành công!
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:08 01/12/2025[0m [92m DASHBOARD:[0m Đã mở trang quản lý bot thành công
+[38;2;245;171;0m─[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:08 01/12/2025[0m [38;2;235;103;52m ADMINBOT:[0m [1] 100057376711750 | Lê Viết Công
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:08 01/12/2025[0m [38;2;235;103;52m NOTIFICATION:[0m Currently there are some thieves who are editing the copyright of the source code and distributing it.
+[!] The source code should only be downloaded from the official github page: https://github.com/ntkhang03/Goat-Bot-V2
+[!] Thank you for using the project. Project created by ntkhang03 (https://github.com/ntkhang03)
+[90m13:57:08 01/12/2025[0m [38;2;235;103;52m SUCCESS:[0m Khởi chạy bot thành công, bắt đầu nhận tin nhắn từ người dùng
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:08 01/12/2025[0m [38;2;235;103;52m LOAD TIME:[0m 20s
+[38;2;245;171;0m COPYRIGHT [0m
+[1m[33mCOPYRIGHT:[0m[1m[37m [0m[1m[36mProject GoatBot v2 created by ntkhang03 (https://github.com/ntkhang03), please do not sell this source code or claim it as your own. Thank you![0m
+[38;2;245;171;0m─[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:08 01/12/2025[0m [92m LISTEN_MQTT:[0m Đã bật khởi động lại ListenMQTT sau mỗi 1h
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:08 01/12/2025[0m [92m BOT_STARTED:[0m Đã khởi động bot thành công, bắt đầu nhận tin nhắn từ người dùng
+[38;2;245;171;0m─[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [32mMESSAGE:[0m [90m{
+[0m  type: [32m"message"[0m[90m,[0m
+  senderID: [32m"100057376711750"[0m[90m,[0m
+  body: [32m"/help"[0m[90m,[0m
+  threadID: [32m"1379063460625066"[0m[90m,[0m
+  messageID: [32m"mid.$gAATmQDuxeqqhCfjXIGa2LOQR2QK6"[0m[90m,[0m
+  attachments: [][90m,[0m
+  mentions: {}[90m,[0m
+  timestamp: [32m"1764572237600"[0m[90m,[0m
+  isGroup: [33mtrue[0m[90m,[0m
+  participantIDs: [32m"Array(3)"[0m
+[90m}[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:57:17 01/12/2025[0m [92m CALL COMMAND:[0m help | Lê Viết Công | 100057376711750 | 1379063460625066 |
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [32mMESSAGE:[0m [90m{
+[0m  type: [32m"message"[0m[90m,[0m
+  senderID: [32m"100057376711750"[0m[90m,[0m
+  body: [32m"/moon"[0m[90m,[0m
+  threadID: [32m"1379063460625066"[0m[90m,[0m
+  messageID: [32m"mid.$gAATmQDuxeqqhCfp46Ga2LUx-ZKD8"[0m[90m,[0m
+  attachments: [][90m,[0m
+  mentions: {}[90m,[0m
+  timestamp: [32m"1764572344552"[0m[90m,[0m
+  isGroup: [33mtrue[0m[90m,[0m
+  participantIDs: [32m"Array(3)"[0m
+[90m}[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:59:05 01/12/2025[0m [92m CALL COMMAND:[0m moon | Lê Viết Công | 100057376711750 | 1379063460625066 |
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [32mMESSAGE:[0m [90m{
+[0m  type: [32m"message"[0m[90m,[0m
+  senderID: [32m"100057376711750"[0m[90m,[0m
+  body: [32m"/namaz"[0m[90m,[0m
+  threadID: [32m"1379063460625066"[0m[90m,[0m
+  messageID: [32m"mid.$gAATmQDuxeqqhCfque2a2LVnfOV-1"[0m[90m,[0m
+  attachments: [][90m,[0m
+  mentions: {}[90m,[0m
+  timestamp: [32m"1764572358267"[0m[90m,[0m
+  isGroup: [33mtrue[0m[90m,[0m
+  participantIDs: [32m"Array(3)"[0m
+[90m}[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:59:20 01/12/2025[0m [92m CALL COMMAND:[0m namaz | Lê Viết Công | 100057376711750 | 1379063460625066 |
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [32mMESSAGE:[0m [90m{
+[0m  type: [32m"message"[0m[90m,[0m
+  senderID: [32m"100057376711750"[0m[90m,[0m
+  body: [32m"/status"[0m[90m,[0m
+  threadID: [32m"1379063460625066"[0m[90m,[0m
+  messageID: [32m"mid.$gAATmQDuxeqqhCfryoGa2LWryUkSY"[0m[90m,[0m
+  attachments: [][90m,[0m
+  mentions: {}[90m,[0m
+  timestamp: [32m"1764572375712"[0m[90m,[0m
+  isGroup: [33mtrue[0m[90m,[0m
+  participantIDs: [32m"Array(3)"[0m
+[90m}[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m13:59:36 01/12/2025[0m [92m CALL COMMAND:[0m status | Lê Viết Công | 100057376711750 | 1379063460625066 |
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Message with attachment sent successfully: {
+  threadID: '1379063460625066',
+  messageID: 'mid.$gAATmQDuxeqqhCfr3Gma2LWtrNiCI',
+  timestamp: 1764572376858
+}
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [32mMESSAGE:[0m [90m{
+[0m  type: [32m"message"[0m[90m,[0m
+  senderID: [32m"100050866984233"[0m[90m,[0m
+  body: [32m"/balance"[0m[90m,[0m
+  threadID: [32m"1379063460625066"[0m[90m,[0m
+  messageID: [32m"mid.$gAATmQDuxeqqhCfuD2Ga2LY-YzCYm"[0m[90m,[0m
+  attachments: [][90m,[0m
+  mentions: {}[90m,[0m
+  timestamp: [32m"1764572412888"[0m[90m,[0m
+  isGroup: [33mtrue[0m[90m,[0m
+  participantIDs: [32m"Array(3)"[0m
+[90m}[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:00:13 01/12/2025[0m [92m CALL COMMAND:[0m balance | Lê Viết Công | 100050866984233 | 1379063460625066 |
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [32mMESSAGE:[0m [90m{
+[0m  type: [32m"message"[0m[90m,[0m
+  senderID: [32m"100050866984233"[0m[90m,[0m
+  body: [32m"/pay @Lê Viết Công 1000"[0m[90m,[0m
+  threadID: [32m"1379063460625066"[0m[90m,[0m
+  messageID: [32m"mid.$gAATmQDuxeqqhCfvI9Wa2LaDwbzaw"[0m[90m,[0m
+  attachments: [][90m,[0m
+  mentions: [90m{
+[0m    [32m"100057376711750"[0m: [32m"@Lê Viết Công"[0m
+  [90m}[0m[90m,[0m
+  timestamp: [32m"1764572430581"[0m[90m,[0m
+  isGroup: [33mtrue[0m[90m,[0m
+  participantIDs: [32m"Array(3)"[0m
+[90m}[0m
