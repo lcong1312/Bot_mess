@@ -1,7 +1,7 @@
 module.exports = {
   config: {
     name: "khoachat",
-    aliases: ["mutechat", "kc"],
+    aliases: ["mute", "kc"],
     version: "1.0",
     author: "Viết Công",
     countDown: 5,
@@ -106,13 +106,16 @@ module.exports = {
 
       // Thêm vào danh sách khóa
       mutedUsers.push(targetID);
-      await threadsData.set(threadID, {
-        ...threadData,
-        data: {
-          ...threadData.data,
-          mutedUsers: mutedUsers
-        }
-      });
+      
+      // Lưu vào database
+      await threadsData.set(threadID, mutedUsers, "data.mutedUsers");
+      
+      // Cập nhật cache
+      const cachedThread = global.db.allThreadData.find(t => t.threadID === threadID);
+      if (cachedThread) {
+        if (!cachedThread.data) cachedThread.data = {};
+        cachedThread.data.mutedUsers = mutedUsers;
+      }
 
       return message.reply(getLang("muted", targetName));
     }
@@ -127,13 +130,16 @@ module.exports = {
 
       // Xóa khỏi danh sách
       mutedUsers.splice(index, 1);
-      await threadsData.set(threadID, {
-        ...threadData,
-        data: {
-          ...threadData.data,
-          mutedUsers: mutedUsers
-        }
-      });
+      
+      // Lưu vào database
+      await threadsData.set(threadID, mutedUsers, "data.mutedUsers");
+      
+      // Cập nhật cache
+      const cachedThread = global.db.allThreadData.find(t => t.threadID === threadID);
+      if (cachedThread) {
+        if (!cachedThread.data) cachedThread.data = {};
+        cachedThread.data.mutedUsers = mutedUsers;
+      }
 
       return message.reply(getLang("unmuted", targetName));
     }
@@ -144,17 +150,19 @@ module.exports = {
   onChat: async function ({ event, threadsData, api }) {
     const { threadID, senderID, messageID } = event;
     
-    // Lấy danh sách người bị khóa
-    const threadData = await threadsData.get(threadID);
-    const mutedUsers = threadData.data?.mutedUsers || [];
+    try {
+      // Lấy danh sách người bị khóa từ database
+      const threadData = await threadsData.get(threadID);
+      const mutedUsers = threadData?.data?.mutedUsers || [];
 
-    // Nếu người gửi bị khóa chat
-    if (mutedUsers.includes(senderID)) {
-      // Xóa tin nhắn
-      api.unsendMessage(messageID);
-      
-      // Gửi thông báo (tùy chọn)
-      // api.sendMessage("⚠️ Bạn đã bị khóa chat trong nhóm này!", threadID);
+      // Nếu người gửi bị khóa chat
+      if (mutedUsers.includes(senderID)) {
+        // Xóa tin nhắn ngay lập tức
+        api.unsendMessage(messageID);
+        return;
+      }
+    } catch (error) {
+      console.error("Error in khoachat onChat:", error);
     }
   }
 };

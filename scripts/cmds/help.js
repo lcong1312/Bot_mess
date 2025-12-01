@@ -310,9 +310,16 @@ module.exports = {
  if (!fs.existsSync(pathCheck))
  fs.mkdirSync(pathCheck); // create folder
  }
- const getFilePromise = axios.get(guide.attachment[keyPathFile], { responseType: 'arraybuffer' })
+ const getFilePromise = axios.get(guide.attachment[keyPathFile], { 
+ responseType: 'arraybuffer',
+ timeout: 10000 // 10 seconds timeout
+ })
  .then(response => {
  fs.writeFileSync(pathFile, Buffer.from(response.data));
+ })
+ .catch(error => {
+ console.log(`Cannot download attachment: ${error.message}`);
+ return null;
  });
 
  promises.push({
@@ -329,8 +336,11 @@ module.exports = {
  }
 
  await Promise.all(promises.map(item => item.getFilePromise));
- for (const item of promises)
+ for (const item of promises) {
+ if (fs.existsSync(item.pathFile)) {
  formSendMessage.attachment.push(fs.createReadStream(item.pathFile));
+ }
+ }
  }
  }
 

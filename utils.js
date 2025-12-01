@@ -426,7 +426,7 @@ function randomNumber(min, max) {
 
 function removeHomeDir(fullPath) {
 	if (!fullPath || typeof fullPath !== "string")
-		throw new Error('The first argument (fullPath) must be a string');
+		return fullPath || "";
 	while (fullPath.includes(process.cwd()))
 		fullPath = fullPath.replace(process.cwd(), "");
 	return fullPath;

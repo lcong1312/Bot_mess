@@ -269,10 +269,22 @@ function loadScripts(folder, fileName, log, configCommands, api, threadModel, us
 	const storageCommandFilesPath = global.GoatBot[folder == "cmds" ? "commandFilesPath" : "eventCommandsFilesPath"];
 
 	try {
+		// Ensure fileName is a string and normalize it
+		if (!fileName || typeof fileName !== 'string') {
+			throw new Error('fileName must be a valid string');
+		}
+
+		// Remove .js extension if present for rawCode case
 		if (rawCode) {
-			fileName = fileName.slice(0, -3);
+			if (fileName.endsWith('.js')) {
+				fileName = fileName.slice(0, -3);
+			}
 			fs.writeFileSync(path.normalize(`${process.cwd()}/scripts/${folder}/${fileName}.js`), rawCode);
 		}
+
+		// Ensure fileName doesn't have .js extension for path construction
+		const fileNameWithoutExt = fileName.endsWith('.js') ? fileName.slice(0, -3) : fileName;
+
 		const regExpCheckPackage = /require(\s+|)\((\s+|)[`'"]([^`'"]+)[`'"](\s+|)\)/g;
 		const { GoatBot } = global;
 		const { onFirstChat: allOnFirstChat, onChat: allOnChat, onEvent: allOnEvent, onAnyEvent: allOnAnyEvent } = GoatBot;
@@ -290,14 +302,14 @@ function loadScripts(folder, fileName, log, configCommands, api, threadModel, us
 		// const pathCommand = path.normalize(path.normalize(process.cwd() + `/${folder}/${fileName}.js`));
 		let pathCommand;
 		if (process.env.NODE_ENV == "development") {
-			const devPath = path.normalize(process.cwd() + `/scripts/${folder}/${fileName}.dev.js`);
+			const devPath = path.normalize(process.cwd() + `/scripts/${folder}/${fileNameWithoutExt}.dev.js`);
 			if (fs.existsSync(devPath))
 				pathCommand = devPath;
 			else
-				pathCommand = path.normalize(process.cwd() + `/scripts/${folder}/${fileName}.js`);
+				pathCommand = path.normalize(process.cwd() + `/scripts/${folder}/${fileNameWithoutExt}.js`);
 		}
 		else
-			pathCommand = path.normalize(process.cwd() + `/scripts/${folder}/${fileName}.js`);
+			pathCommand = path.normalize(process.cwd() + `/scripts/${folder}/${fileNameWithoutExt}.js`);
 
 		// ————————————————— CHECK PACKAGE ————————————————— //
 		const contentFile = fs.readFileSync(pathCommand, "utf8");
@@ -341,12 +353,15 @@ function loadScripts(folder, fileName, log, configCommands, api, threadModel, us
 		const oldCommand = require(pathCommand);
 		const oldCommandName = oldCommand?.config?.name;
 		// —————————————— CHECK COMMAND EXIST ——————————————— //
-		if (!oldCommandName) {
-			if (GoatBot[setMap].get(oldCommandName)?.location != pathCommand)
-				throw new Error(`${commandType} name "${oldCommandName}" is already exist in command "${removeHomeDir(GoatBot[setMap].get(oldCommandName)?.location || "")}"`);
+		if (oldCommandName) {
+			const existingCommand = GoatBot[setMap].get(oldCommandName);
+			if (existingCommand && existingCommand.location != pathCommand) {
+				const existingLocation = existingCommand.location || "";
+				throw new Error(`${commandType} name "${oldCommandName}" is already exist in command "${removeHomeDir(existingLocation)}"`);
+			}
 		}
 		// ————————————————— CHECK ALIASES ————————————————— //
-		if (oldCommand.config.aliases) {
+		if (oldCommand?.config?.aliases) {
 			let oldAliases = oldCommand.config.aliases;
 			if (typeof oldAliases == "string")
 				oldAliases = [oldAliases];
@@ -410,8 +425,12 @@ function loadScripts(folder, fileName, log, configCommands, api, threadModel, us
 			for (const alias of aliases) {
 				if (aliases.filter(item => item == alias).length > 1)
 					throw new Error(`alias "${alias}" duplicate in ${commandType} "${scriptName}" with file name "${removeHomeDir(pathCommand || "")}"`);
-				if (GoatBot.aliases.has(alias))
-					throw new Error(`alias "${alias}" is already exist in ${commandType} "${GoatBot.aliases.get(alias)}" with file name "${removeHomeDir(GoatBot[setMap].get(GoatBot.aliases.get(alias))?.location || "")}"`);
+				if (GoatBot.aliases.has(alias)) {
+					const existingCommandName = GoatBot.aliases.get(alias);
+					const existingCommand = GoatBot[setMap].get(existingCommandName);
+					const existingLocation = existingCommand?.location || "";
+					throw new Error(`alias "${alias}" is already exist in ${commandType} "${existingCommandName}" with file name "${removeHomeDir(existingLocation)}"`);
+				}
 				GoatBot.aliases.set(alias, scriptName);
 			}
 		}
@@ -483,9 +502,17 @@ function loadScripts(folder, fileName, log, configCommands, api, threadModel, us
 }
 
 function unloadScripts(folder, fileName, configCommands, getLang) {
-	const pathCommand = `${process.cwd()}/scripts/${folder}/${fileName}.js`;
+	// Ensure fileName is a string
+	if (!fileName || typeof fileName !== 'string') {
+		throw new Error('fileName must be a valid string');
+	}
+
+	// Remove .js extension if present
+	const fileNameWithoutExt = fileName.endsWith('.js') ? fileName.slice(0, -3) : fileName;
+	const pathCommand = `${process.cwd()}/scripts/${folder}/${fileNameWithoutExt}.js`;
+	
 	if (!fs.existsSync(pathCommand)) {
-		const err = new Error(getLang("missingFile", `${fileName}.js`));
+		const err = new Error(getLang("missingFile", `${fileNameWithoutExt}.js`));
 		err.name = "FileNotFound";
 		throw err;
 	}
