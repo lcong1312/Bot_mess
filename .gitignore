@@ -13,6 +13,10 @@ checkOriginCodeChanged.js
 *.test.*
 test.js
 
+# Config files with sensitive data
+config.json
+account.txt
+
 database/data/*
 !database/data/.gitkeep
 
