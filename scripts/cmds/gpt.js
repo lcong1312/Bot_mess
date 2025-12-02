@@ -1,9 +1,5 @@
 const axios = require('axios');
 
-// config 
-const apiKey = "";
-const maxTokens = 500;
-const numberGenerateImage = 4;
 const maxStorageMessage = 4;
 
 if (!global.temp.openAIUsing)
@@ -16,7 +12,7 @@ const { openAIUsing, openAIHistory } = global.temp;
 module.exports = {
 	config: {
 		name: "gpt",
-		version: "1.4",
+		version: "1.5",
 		author: "NTKhang | Viết Công",
 		countDown: 5,
 		role: 0,
@@ -26,88 +22,28 @@ module.exports = {
 		},
 		category: "box chat",
 		guide: {
-			vi: "   {pn} <draw> <nội dung> - tạo hình ảnh từ nội dung"
-				+ "\n   {pn} <clear> - xóa lịch sử chat với gpt"
-				+ "\n   {pn} <nội dung> - chat với gpt",
-			en: "   {pn} <draw> <content> - create image from content"
-				+ "\n   {pn} <clear> - clear chat history with gpt"
-				+ "\n   {pn} <content> - chat with gpt"
+			vi: "   {pn} <clear> - xoa lich su chat voi gpt\n   {pn} <noi dung> - chat voi gpt",
+			en: "   {pn} <clear> - clear chat history with gpt\n   {pn} <content> - chat with gpt"
 		}
 	},
 
 	langs: {
 		vi: {
-			apiKeyEmpty: "Vui lòng cung cấp api key cho openai tại file scripts/cmds/gpt.js",
-			invalidContentDraw: "Vui lòng nhập nội dung bạn muốn vẽ",
-			yourAreUsing: "Bạn đang sử dụng gpt chat, vui lòng chờ quay lại sau khi yêu cầu trước kết thúc",
-			processingRequest: "Đang xử lý yêu cầu của bạn, quá trình này có thể mất vài phút, vui lòng chờ",
-			invalidContent: "Vui lòng nhập nội dung bạn muốn chat",
-			error: "Đã có lỗi xảy ra\n%1",
-			clearHistory: "Đã xóa lịch sử chat của bạn với gpt"
+			invalidContent: "Vui long nhap noi dung ban muon chat",
+			yourAreUsing: "Ban dang su dung gpt chat, vui long cho",
+			error: "Da co loi xay ra\n%1",
+			clearHistory: "Da xoa lich su chat cua ban voi gpt"
 		},
 		en: {
-			apiKeyEmpty: "Please provide api key for openai at file scripts/cmds/gpt.js",
-			invalidContentDraw: "Please enter the content you want to draw",
-			yourAreUsing: "You are using gpt chat, please wait until the previous request ends",
-			processingRequest: "Processing your request, this process may take a few minutes, please wait",
 			invalidContent: "Please enter the content you want to chat",
+			yourAreUsing: "You are using gpt chat, please wait",
 			error: "An error has occurred\n%1",
 			clearHistory: "Your chat history with gpt has been deleted"
 		}
 	},
 
-	onStart: async function ({ message, event, args, getLang, prefix, commandName }) {
-		if (!apiKey)
-			return message.reply(getLang('apiKeyEmpty', prefix));
-
+	onStart: async function ({ message, event, args, getLang, commandName }) {
 		switch (args[0]) {
-			case 'img':
-			case 'image':
-			case 'draw': {
-				if (!args[1])
-					return message.reply(getLang('invalidContentDraw'));
-				if (openAIUsing[event.senderID])
-					return message.reply(getLang("yourAreUsing"));
-
-				openAIUsing[event.senderID] = true;
-
-				let sending;
-				try {
-					sending = message.reply(getLang('processingRequest'));
-					const responseImage = await axios({
-						url: "https://api.openai.com/v1/images/generations",
-						method: "POST",
-						headers: {
-							"Authorization": `Bearer ${apiKey}`,
-							"Content-Type": "application/json"
-						},
-						data: {
-							prompt: args.slice(1).join(' '),
-							n: numberGenerateImage,
-							size: '1024x1024'
-						}
-					});
-					const imageUrls = responseImage.data.data;
-					const images = await Promise.all(imageUrls.map(async (item) => {
-						const image = await axios.get(item.url, {
-							responseType: 'stream'
-						});
-						image.data.path = `${Date.now()}.png`;
-						return image.data;
-					}));
-					return message.reply({
-						attachment: images
-					});
-				}
-				catch (err) {
-					const errorMessage = err.response?.data.error.message || err.message;
-					return message.reply(getLang('error', errorMessage || ''));
-				}
-				finally {
-					delete openAIUsing[event.senderID];
-					message.unsend((await sending).messageID);
-				}
-			}
 			case 'clear': {
 				openAIHistory[event.senderID] = [];
 				return message.reply(getLang('clearHistory'));
@@ -115,6 +51,9 @@ module.exports = {
 			default: {
 				if (!args[0])
 					return message.reply(getLang('invalidContent'));
+
+				if (openAIUsing[event.senderID])
+					return message.reply(getLang("yourAreUsing"));
 
 				handleGpt(event, message, args, getLang, commandName);
 			}
@@ -130,49 +69,42 @@ module.exports = {
 	}
 };
 
-async function askGpt(event) {
+async function askGpt(prompt, history) {
 	const response = await axios({
-		url: "https://api.openai.com/v1/chat/completions",
+		url: "https://api.deepinfra.com/v1/openai/chat/completions",
 		method: "POST",
 		headers: {
-			"Authorization": `Bearer ${apiKey}`,
 			"Content-Type": "application/json"
 		},
 		data: {
-			model: "gpt-3.5-turbo",
-			messages: openAIHistory[event.senderID],
-			max_tokens: maxTokens,
+			model: "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+			messages: [
+				{ role: "system", content: "Ban la mot tro ly AI thong minh, huu ich. Tra loi ngan gon, chinh xac." },
+				...history,
+				{ role: "user", content: prompt }
+			],
+			max_tokens: 1024,
 			temperature: 0.7
 		}
 	});
-	return response;
+	return response.data.choices[0].message.content;
 }
 
 async function handleGpt(event, message, args, getLang, commandName) {
 	try {
 		openAIUsing[event.senderID] = true;
 
-		if (
-			!openAIHistory[event.senderID] ||
-			!Array.isArray(openAIHistory[event.senderID])
-		)
+		if (!openAIHistory[event.senderID] || !Array.isArray(openAIHistory[event.senderID]))
 			openAIHistory[event.senderID] = [];
 
-		if (openAIHistory[event.senderID].length >= maxStorageMessage)
-			openAIHistory[event.senderID].shift();
+		const prompt = args.join(' ');
+		const text = await askGpt(prompt, openAIHistory[event.senderID]);
 
-		openAIHistory[event.senderID].push({
-			role: 'user',
-			content: args.join(' ')
-		});
+		openAIHistory[event.senderID].push({ role: 'user', content: prompt });
+		openAIHistory[event.senderID].push({ role: 'assistant', content: text });
 
-		const response = await askGpt(event);
-		const text = response.data.choices[0].message.content;
-
-		openAIHistory[event.senderID].push({
-			role: 'assistant',
-			content: text
-		});
+		if (openAIHistory[event.senderID].length > maxStorageMessage * 2)
+			openAIHistory[event.senderID] = openAIHistory[event.senderID].slice(-maxStorageMessage * 2);
 
 		return message.reply(text, (err, info) => {
 			global.GoatBot.onReply.set(info.messageID, {
@@ -183,7 +115,7 @@ async function handleGpt(event, message, args, getLang, commandName) {
 		});
 	}
 	catch (err) {
-		const errorMessage = err.response?.data.error.message || err.message || "";
+		const errorMessage = err.response?.data?.error?.message || err.message || "";
 		return message.reply(getLang('error', errorMessage));
 	}
 	finally {

@@ -41,7 +41,7 @@ module.exports = {
 
       const allUsers = await usersData.getAll();
       const allThreads = await threadsData.getAll();
-      const now = moment().tz('Asia/Dhaka');
+      const now = moment().tz('Asia/Ho_Chi_Minh');
       const date = now.format('MMMM Do YYYY');
       const time = now.format('h:mm:ss A');
 

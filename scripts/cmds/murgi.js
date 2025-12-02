@@ -42,7 +42,7 @@ module.exports = {
       id = args[0]; 
     } else {
       return api.sendMessage(
-        "❌ Mention, reply, or give UID to make murgi someone",
+        "❌ Tag, reply hoặc nhập UID để tạo ảnh murgi",
         threadID,
         messageID
       );
@@ -57,14 +57,14 @@ module.exports = {
       fs.writeFileSync(filePath, response.data);
       
       api.sendMessage(
-        { attachment: fs.createReadStream(filePath), body: "Here's your murgi image 🐸" },
+        { attachment: fs.createReadStream(filePath), body: "Đây là ảnh murgi của bạn 🐸" },
         threadID,
         () => fs.unlinkSync(filePath),
         messageID
       );
 
     } catch (err) {
-      api.sendMessage(`🥹error, contact MahMUD.`, threadID, messageID);
+      api.sendMessage(`🥹 Lỗi, liên hệ admin.`, threadID, messageID);
     }
   }
 };

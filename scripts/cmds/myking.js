@@ -42,7 +42,7 @@ module.exports = {
 
     if (!target)
       return api.sendMessage(
-        "❌ Mention, reply, or give UID to make someone your King!",
+        "❌ Tag, reply hoặc nhập UID để chọn vua của bạn!",
         event.threadID,
         event.messageID
       );
@@ -76,7 +76,7 @@ module.exports = {
         event.messageID
       );
     } catch (err) {
-      api.sendMessage("🥹error, contact MahMUD." + err.message, event.threadID, event.messageID);
+      api.sendMessage("🥹 Lỗi, liên hệ admin. " + err.message, event.threadID, event.messageID);
     }
   },
 };

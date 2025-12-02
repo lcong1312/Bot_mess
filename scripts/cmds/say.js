@@ -31,7 +31,7 @@ module.exports = {
     }
 
     if (!text) {
-      return message.reply("⚠️ দয়া করে কিছু লিখুন বা একটি মেসেজে রিপ্লাই দিন!");
+      return message.reply("⚠️ Vui lòng nhập văn bản hoặc reply một tin nhắn!");
     }
 
     try {
@@ -53,7 +53,7 @@ module.exports = {
 
     } catch (e) {
       console.error("API Error:", e.response ? e.response.data : e.message);
-      message.reply("🥹error, contact MahMUD.\n" + (e.response?.data?.error || e.message));
+      message.reply("🥹 Lỗi, liên hệ admin.\n" + (e.response?.data?.error || e.message));
     }
   },
 };

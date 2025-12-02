@@ -29,7 +29,7 @@ module.exports = {
       const apiUrl = await mahmud();
       const res = await axios.get(`${apiUrl}/api/album/videos/bleach?userID=${event.senderID}`);
       if (!res.data.success || !res.data.videos.length)
-        return api.sendMessage("❌ | No videos found.", event.threadID, event.messageID);
+        return api.sendMessage("❌ | Không tìm thấy video.", event.threadID, event.messageID);
 
       const url = res.data.videos[Math.floor(Math.random() * res.data.videos.length)];
       const filePath = path.join(__dirname, "temp_video.mp4");
@@ -46,17 +46,17 @@ module.exports = {
 
       writer.on("finish", () => {
         api.sendMessage({
-          body: "𝐇𝐞𝐫𝐞'𝐬 𝐲𝐨𝐮𝐫 𝐁𝐀𝐍𝐊𝐀𝐈 𝐯𝐢𝐝𝐞𝐨 <😘",
+          body: "𝐕𝐢𝐝𝐞𝐨 𝐁𝐀𝐍𝐊𝐀𝐈 𝐜𝐮̉𝐚 𝐛𝐚̣𝐧 đ𝐚̂𝐲 😘",
           attachment: fs.createReadStream(filePath)
         }, event.threadID, () => fs.unlinkSync(filePath), event.messageID);
       });
 
       writer.on("error", () => {
-        api.sendMessage("❌ | Download error.", event.threadID, event.messageID);
+        api.sendMessage("❌ | Lỗi tải xuống.", event.threadID, event.messageID);
       });
     } catch (e) {
       console.error("ERROR:", e);
-      api.sendMessage("🥹error, contact MahMUD.", event.threadID, event.messageID);
+      api.sendMessage("🥹 Lỗi, liên hệ admin.", event.threadID, event.messageID);
     }
   }
 };

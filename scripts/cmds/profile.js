@@ -19,8 +19,7 @@ module.exports = {
     },
     guide: {
       vi: "{pn} [tag/reply/uid/link profile] - Lấy ảnh đại diện",
-      en: "{pn} [mention/reply/userID/facebook profile link] - Get the profile picture",
-      bn: "{pn} [মেনশন/রিপ্লাই/ব্যবহারকারী আইডি/ফেসবুক প্রোফাইল লিঙ্ক] - প্রোফাইল ছবি দেখুন।"
+      en: "{pn} [mention/reply/userID/facebook profile link] - Get the profile picture"
     }
   },
 

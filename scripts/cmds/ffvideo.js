@@ -36,7 +36,7 @@ module.exports = {
       const apiUrl = await mahmud();
       const res = await axios.get(`${apiUrl}/api/album/videos/freefire?userID=${event.senderID}`);
       if (!res.data.success || !res.data.videos.length)
-        return api.sendMessage("❌ | No videos found.", event.threadID, event.messageID);
+        return api.sendMessage("❌ | Không tìm thấy video.", event.threadID, event.messageID);
 
       const url = res.data.videos[Math.floor(Math.random() * res.data.videos.length)];
       const filePath = path.join(__dirname, "temp_video.mp4");
@@ -59,11 +59,11 @@ module.exports = {
       });
 
       writer.on("error", () => {
-        api.sendMessage("❌ | Download error.", event.threadID, event.messageID);
+        api.sendMessage("❌ | Lỗi tải xuống.", event.threadID, event.messageID);
       });
     } catch (e) {
       console.error("ERROR:", e);
-      api.sendMessage("🥹error, contact MahMUD.", event.threadID, event.messageID);
+      api.sendMessage("🥹 Lỗi, liên hệ admin.", event.threadID, event.messageID);
     }
   }
 };

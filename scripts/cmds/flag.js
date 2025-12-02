@@ -102,7 +102,7 @@ module.exports = {
       );
     } catch (error) {
       console.error("FlagGame Error:", error.message);
-      api.sendMessage(`🥹error, contact MahMUD.: ${error.message}`, event.threadID, event.messageID);
+      api.sendMessage(`🥹 Lỗi, liên hệ admin: ${error.message}`, event.threadID, event.messageID);
     }
   }
 };

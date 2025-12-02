@@ -38,7 +38,7 @@ module.exports = {
       const imageStream = await global.utils.getStreamFromURL(res.data.imageUrl);
 
       const message = await api.sendMessage({
-        body: "✅ Here is your generated image",
+        body: "✅ Đây là ảnh được tạo cho bạn",
         attachment: imageStream
       }, event.threadID, event.messageID);
 

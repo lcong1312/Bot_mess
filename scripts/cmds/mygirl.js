@@ -28,7 +28,7 @@ module.exports.onStart = async ({ event, api, args }) => {try {
     const mention = Object.keys(event.mentions)[0] || (event.messageReply && event.messageReply.senderID);
 
     if (!mention)
-      return api.sendMessage("Please tag or reply to 1 person", threadID, messageID);
+      return api.sendMessage("Vui lòng tag hoặc reply 1 người", threadID, messageID);
 
     const user1 = senderID;
     const user2 = mention;
@@ -48,6 +48,6 @@ module.exports.onStart = async ({ event, api, args }) => {try {
 
   } catch (error) {
     console.error(error);
-    api.sendMessage("🥹error, contact MahMUD.", event.threadID, event.messageID);
+    api.sendMessage("🥹 Lỗi, liên hệ admin.", event.threadID, event.messageID);
   }
 };

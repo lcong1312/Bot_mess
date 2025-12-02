@@ -7,7 +7,7 @@ module.exports.config = {
     name: "bby",
     aliases: ["baby", "bbe", "babe"," bot chan"],
     version: "6.9.0",
-    author: "dipto edit by Arafat",
+    author: "dipto edit by Arafat | Viết Công",
     countDown: 0,
     role: 0,
     description: {
@@ -34,7 +34,7 @@ module.exports.onStart = async ({
 
     try {
         if (!args[0]) {
-            const ran = ["Bolo baby", "hum", "type help baby", "type #baby hi"];
+            const ran = ["Nói đi bé", "hum", "gõ help baby", "gõ #baby hi"];
             return api.sendMessage(ran[Math.floor(Math.random() * ran.length)], event.threadID, event.messageID);
         }
 
@@ -58,7 +58,7 @@ module.exports.onStart = async ({
                 const teachers = await Promise.all(limited.map(async (item) => {
                     const number = Object.keys(item)[0];
                     const value = item[number];
-                    const name = await usersData.getName(number).catch(() => number) || "Not found";
+                    const name = await usersData.getName(number).catch(() => number) || "Không tìm thấy";
                     return {
                         name,
                         value
@@ -66,53 +66,53 @@ module.exports.onStart = async ({
                 }));
                 teachers.sort((a, b) => b.value - a.value);
                 const output = teachers.map((t, i) => `${i + 1}/ ${t.name}: ${t.value}`).join('\n');
-                return api.sendMessage(`Total Teach = ${data.length}\n👑 | List of Teachers of baby\n${output}`, event.threadID, event.messageID);
+                return api.sendMessage(`Tổng số dạy = ${data.length}\n👑 | Danh sách người dạy bot\n${output}`, event.threadID, event.messageID);
             } else {
                 const d = (await axios.get(`${link}?list=all`)).data;
-                return api.sendMessage(`❇️ | Total Teach = ${d.length || "api off"}\n♻️ | Total Response = ${d.responseLength || "api off"}`, event.threadID, event.messageID);
+                return api.sendMessage(`❇️ | Tổng số dạy = ${d.length || "api tắt"}\n♻️ | Tổng phản hồi = ${d.responseLength || "api tắt"}`, event.threadID, event.messageID);
             }
         }
 
         if (args[0] === 'msg') {
             const fuk = dipto.replace("msg ", "");
             const d = (await axios.get(`${link}?list=${fuk}`)).data.data;
-            return api.sendMessage(`Message ${fuk} = ${d}`, event.threadID, event.messageID);
+            return api.sendMessage(`Tin nhắn ${fuk} = ${d}`, event.threadID, event.messageID);
         }
 
         if (args[0] === 'edit') {
             const command = dipto.split(/\s*-\s*/)[1];
-            if (command.length < 2) return api.sendMessage('❌ | Invalid format! Use edit [YourMessage] - [NewReply]', event.threadID, event.messageID);
+            if (command.length < 2) return api.sendMessage('❌ | Sai định dạng! Dùng edit [TinNhắn] - [TrảLờiMới]', event.threadID, event.messageID);
             const dA = (await axios.get(`${link}?edit=${args[1]}&replace=${command}&senderID=${uid}`)).data.message;
-            return api.sendMessage(`changed ${dA}`, event.threadID, event.messageID);
+            return api.sendMessage(`Đã thay đổi ${dA}`, event.threadID, event.messageID);
         }
 
         if (args[0] === 'teach' && args[1] !== 'amar' && args[1] !== 'react') {
             [comd, command] = dipto.split(/\s*-\s*/);
             final = comd.replace("teach ", "");
-            if (command.length < 2) return api.sendMessage('❌ | Invalid format!', event.threadID, event.messageID);
+            if (command.length < 2) return api.sendMessage('❌ | Sai định dạng!', event.threadID, event.messageID);
             const re = await axios.get(`${link}?teach=${final}&reply=${command}&senderID=${uid}&threadID=${event.threadID}`);
             const tex = re.data.message;
             const teacher = (await usersData.get(re.data.teacher)).name;
-            return api.sendMessage(`✅ Replies added ${tex}\nTeacher: ${teacher}\nTeachs: ${re.data.teachs}`, event.threadID, event.messageID);
+            return api.sendMessage(`✅ Đã thêm câu trả lời ${tex}\nNgười dạy: ${teacher}\nSố lần dạy: ${re.data.teachs}`, event.threadID, event.messageID);
         }
 
         if (args[0] === 'teach' && args[1] === 'amar') {
             [comd, command] = dipto.split(/\s*-\s*/);
             final = comd.replace("teach ", "");
-            if (command.length < 2) return api.sendMessage('❌ | Invalid format!', event.threadID, event.messageID);
+            if (command.length < 2) return api.sendMessage('❌ | Sai định dạng!', event.threadID, event.messageID);
             const tex = (await axios.get(`${link}?teach=${final}&senderID=${uid}&reply=${command}&key=intro`)).data.message;
-            return api.sendMessage(`✅ Replies added ${tex}`, event.threadID, event.messageID);
+            return api.sendMessage(`✅ Đã thêm câu trả lời ${tex}`, event.threadID, event.messageID);
         }
 
         if (args[0] === 'teach' && args[1] === 'react') {
             [comd, command] = dipto.split(/\s*-\s*/);
             final = comd.replace("teach react ", "");
-            if (command.length < 2) return api.sendMessage('❌ | Invalid format!', event.threadID, event.messageID);
+            if (command.length < 2) return api.sendMessage('❌ | Sai định dạng!', event.threadID, event.messageID);
             const tex = (await axios.get(`${link}?teach=${final}&react=${command}`)).data.message;
-            return api.sendMessage(`✅ Replies added ${tex}`, event.threadID, event.messageID);
+            return api.sendMessage(`✅ Đã thêm câu trả lời ${tex}`, event.threadID, event.messageID);
         }
 
-        if (dipto.includes('amar name ki') || dipto.includes('amr nam ki') || dipto.includes('amar nam ki') || dipto.includes('amr name ki') || dipto.includes('whats my name')) {
+        if (dipto.includes('ten toi la gi') || dipto.includes('tên tôi là gì') || dipto.includes('whats my name')) {
             const data = (await axios.get(`${link}?text=amar name ki&senderID=${uid}&key=intro`)).data.reply;
             return api.sendMessage(data, event.threadID, event.messageID);
         }
@@ -131,9 +131,10 @@ module.exports.onStart = async ({
 
     } catch (e) {
         console.log(e);
-        api.sendMessage("Check console for error", event.threadID, event.messageID);
+        api.sendMessage("Kiểm tra console để xem lỗi", event.threadID, event.messageID);
     }
 };
+
 
 module.exports.onReply = async ({
     api,
@@ -154,7 +155,7 @@ module.exports.onReply = async ({
             }, event.messageID);
         }
     } catch (err) {
-        return api.sendMessage(`Error: ${err.message}`, event.threadID, event.messageID);
+        return api.sendMessage(`Lỗi: ${err.message}`, event.threadID, event.messageID);
     }
 };
 
@@ -167,53 +168,58 @@ module.exports.onChat = async ({
         const body = event.body ? event.body?.toLowerCase() : ""
         if (body.startsWith("baby") || body.startsWith("bby") || body.startsWith("bot") || body.startsWith("jan") || body.startsWith("babu") || body.startsWith("janu")) {
             const arr = body.replace(/^\S+\s*/, "")
-            const randomReplies = ["😚", "Yes 😀, I am here", "What's up?", "Bolo jaan ki korte panmr jonno","ʜᴇʏ ʙᴀʙʏ 😘 ᴋᴏᴛʜᴀʏ ᴄʜɪʟᴀ?",
-    "ʙᴀʙʏ, ᴀᴍɪ ᴛᴏᴍᴀʀ ᴏᴘᴇᴋʜʏᴀʏ ᴄʜɪʟᴀᴍ 💖",
-    "ᴋɪ ᴋᴏʀᴛᴇᴄʜᴏ ʙᴀʙʏ? 😍",
-    "ᴍɪꜱꜱ ᴋᴏʀᴇᴄʜᴏ ᴀᴍᴀᴋᴇ? 🥰",
-    "ʏᴇꜱ ʙᴀʙʏ, ᴀᴍɪ ʟɪꜱᴛᴇɴɪɴɢ 👂",
-    "ʙᴀʙʏʏʏ~ ᴛᴜᴍɪ ᴀᴍᴀᴋᴇ ᴄᴀʟʟ ᴋᴏʀᴇᴄʜᴏ? 💌",
-    "ᴏᴡᴡ ʙᴀʙʏ, ᴛᴜᴍɪ ᴏɴᴇᴋ ᴄᴜᴛᴇ 💕",
-    "ʜᴇʏ ʟᴏᴠᴇʀʙᴏʏ/ʟᴏᴠᴇʀɢɪʀʟ 💞",
-    "ᴋɪ ᴅᴏᴋᴛᴇ ʙᴀʙʏ~ ᴀᴍɪ ᴀᴄʜɪ 💗",
-    "ʙᴀʙʏ, ᴛᴜᴍɪ ᴀᴍᴀʀ ꜱᴘᴇᴄɪᴀʟ ❤️",
-    "ʙᴀʙʏ, ᴛᴜᴍɪ ᴄᴀʟʟ ᴋᴏʀʟᴇ ᴀᴍɪ ʀᴜɴ ᴋᴏʀᴇ ᴀꜱʜɪ 😚",
-    "ᴀᴍᴀʀ ꜱʜᴏɴᴀ ʙᴀʙʏ ᴋᴏᴛʜᴀʏ ᴄʜɪʟᴏ 💖",
-    "ʙᴀʙʏ, ᴛᴏᴍᴀʀ ᴍᴇꜱꜱᴀɢᴇ ᴅᴇᴋʜᴇ ʜᴇᴀʀᴛ ʜᴀᴘᴘʏ 💕",
-    "ᴛᴜᴍɪ ᴄᴀʟʟ ᴋᴏʀʟᴇ ᴀᴍɪ ꜱᴍɪʟᴇ ᴋᴏʀɪ 😍",
-    "ʙᴀʙʏ, ᴀᴍɪ ᴀᴄʜɪ ᴛᴏᴍᴀʀ ᴊᴏɴɴᴏ ʜᴍᴍ 💗",
-    "ᴏʏᴇ ʙᴀʙʏ, ᴛᴜᴍɪ ᴀᴍᴀʀ ꜱᴡᴇᴇᴛ ᴘʀᴏʙʟᴇᴍ 😜",
-    "ʙᴀʙʏ, ᴀᴍɪ ᴀᴄʜɪ ᴊᴜꜱᴛ ꜰᴏʀ ʏᴏᴜ 😚",
-    "ᴛᴜᴍɪ ᴋᴀʟ ᴋᴏᴛʜᴀʏ ᴄʜɪʟᴏ ʙᴀʙʏ? 🥹",
-    "ʙᴀʙʏ, ᴛᴏᴍᴀʀ ᴍᴇꜱꜱᴀɢᴇ ᴀᴍᴀʏ ꜰʟʏ ᴋᴏʀᴀʏ 🕊️",
-    "ᴀʟᴡᴀʏꜱ ʏᴏᴜʀꜱ ʙᴀʙʏ 💖",
-    "ʙᴀʙʏ, ᴀᴍᴀʀ ʜᴇᴀʀᴛ ᴛᴜᴍᴀʀ ᴡɪꜰɪ ᴛᴇ ᴄᴏɴɴᴇᴄᴛᴇᴅ 📶❤️",
-    "ʙᴀʙʏ, ᴀᴍɪ ꜱᴜᴅᴜ ᴛᴜᴍᴀʀ ᴊᴏɴɴᴏ ᴏɴʟɪɴᴇ 🌐💗","এই যে আমার হার্ট চোর 😘",
-    "বাবু, তোমার জন্য আমি তো সব ছেড়ে আসতে পারি 💖",
-    "কি করছো, আমার ভবিষ্যৎ স্বামী ? 😍",
-    "তোমার কথা ভাবতে ভাবতে চা ঠান্ডা হয়ে গেল ☕❤️",
-    "তুমি কি GPS? কারণ তুমি ছাড়া আমি হারিয়ে যাই 🗺️💗",
-    "বাবু, তোমার হাসি না দেখলে দিনটাই অফ 💕",
-    "তুমি ডাকলে আমার চার্জ 100% হয়ে যায় 🔋😘",
-    "তুমি ছাড়া আমি WiFi ছাড়া ফোনের মতো 📶💔",
-    "আমার হৃৎপিণ্ডের অ্যাডমিন তুমি ❤️‍🔥",
-    "তুমি কি জাদুকর? দেখলেই মন ভাল হয়ে যায় ✨",
-    "বাবু, তুমি আমার গুগল... কারণ আমার সব উত্তর তুমি 💌",
-    "তুমি না থাকলে ফেসবুকও বোরিং লাগে 📱💗",
-    "আমার হৃদয়ের সিমে শুধু তোমার নাম সেভ আছে 📞❤️",
-    "তুমি আসলেই আবহাওয়া সুন্দর হয়ে যায় 🌤️😘",
-    "আমার হোয়াটসঅ্যাপের টপ চ্যাট শুধু তুমি 💚",
-    "তুমি না থাকলে মনে হয় চার্জার খুলে গেছে 🔌💔",
-    "আমার হার্টে তোমার নটিফিকেশন সবসময় অন 📲💖",
-    "তুমি কি কফি? তোমাকে ছাড়া ঘুম ভাঙে না ☕😍",
-    "তুমি আমার লাইফের VIP গ্রুপে অ্যাড আছো 👑",
-    "তুমি পাশে থাকলেই মনে হয় নেট ফাস্ট হয়ে গেছে ⚡💗",
-    "তুমি কি মেঘ? আমার মন বৃষ্টিতে ভিজিয়ে দাও 🌧️❤️",
-    "তুমি ছাড়া আমি অফলাইন ইউজারের মতো 😅",
-    "বাবু, তুমি আমার হাসির রিমিক্স ভার্সন 🎶💓"
-];
+            const randomReplies = [
+                "😚",
+                "Có 😀, em đây",
+                "Sao vậy?",
+                "Nói đi, em giúp gì được cho bạn nào 💕",
+                "Hey bé 😘 đi đâu rồi?",
+                "Bé ơi, em đợi bạn mãi đó 💖",
+                "Đang làm gì vậy bé? 😍",
+                "Nhớ em không? 🥰",
+                "Có bé, em đang nghe đây 👂",
+                "Bé ơi~ bạn gọi em à? 💌",
+                "Ôi bé, bạn dễ thương quá 💕",
+                "Hey tình yêu 💞",
+                "Sao vậy bé~ em vẫn ổn 💗",
+                "Bé ơi, bạn là người đặc biệt của em ❤️",
+                "Bé gọi là em chạy tới liền 😚",
+                "Cưng của em đi đâu rồi 💖",
+                "Bé ơi, thấy tin nhắn bạn là tim em vui 💕",
+                "Bạn gọi là em cười liền 😍",
+                "Bé ơi, em ở đây vì bạn 💗",
+                "Ê bé, bạn là vấn đề ngọt ngào của em 😜",
+                "Bé ơi, em chỉ online vì bạn thôi 😚",
+                "Hôm qua bạn đi đâu vậy bé? 🥹",
+                "Bé ơi, tin nhắn bạn làm em bay 🕊️",
+                "Mãi là của bạn bé 💖",
+                "Bé ơi, tim em kết nối WiFi của bạn rồi 📶❤️",
+                "Bé ơi, em chỉ online vì bạn thôi 🌐💗",
+                "Này, kẻ trộm tim em 😘",
+                "Bé ơi, vì bạn em có thể bỏ hết mọi thứ 💖",
+                "Đang làm gì vậy, người yêu tương lai của em? 😍",
+                "Nghĩ về bạn mà trà nguội mất rồi ☕❤️",
+                "Bạn là GPS à? Vì không có bạn em lạc đường 🗺️💗",
+                "Bé ơi, không thấy nụ cười bạn là ngày em tắt nắng 💕",
+                "Bạn gọi là pin em đầy 100% liền 🔋😘",
+                "Không có bạn em như điện thoại không WiFi 📶💔",
+                "Bạn là admin trái tim em ❤️‍🔥",
+                "Bạn là phù thủy à? Nhìn thấy là em vui liền ✨",
+                "Bé ơi, bạn là Google của em... vì mọi câu trả lời đều là bạn 💌",
+                "Không có bạn Facebook cũng chán 📱💗",
+                "Trong SIM tim em chỉ lưu tên bạn thôi 📞❤️",
+                "Có bạn là thời tiết đẹp liền 🌤️😘",
+                "Top chat của em chỉ có bạn 💚",
+                "Không có bạn như rút sạc vậy 🔌💔",
+                "Thông báo từ bạn luôn bật trong tim em 📲💖",
+                "Bạn là cà phê à? Không có bạn em không tỉnh được ☕😍",
+                "Bạn nằm trong nhóm VIP cuộc đời em 👑",
+                "Có bạn bên cạnh mạng nhanh hẳn ⚡💗",
+                "Bạn là mây à? Làm lòng em ướt mưa 🌧️❤️",
+                "Không có bạn em như user offline 😅",
+                "Bé ơi, bạn là bản remix nụ cười em 🎶💓"
+            ];
             if (!arr) {
-
                 await api.sendMessage(randomReplies[Math.floor(Math.random() * randomReplies.length)], event.threadID, (error, info) => {
                     if (!info) message.reply("info obj not found")
                     global.GoatBot.onReply.set(info.messageID, {
@@ -236,6 +242,6 @@ module.exports.onChat = async ({
             }, event.messageID)
         }
     } catch (err) {
-        return api.sendMessage(`Error: ${err.message}`, event.threadID, event.messageID);
+        return api.sendMessage(`Lỗi: ${err.message}`, event.threadID, event.messageID);
     }
 };
