@@ -1,18 +1,24 @@
 module.exports = {
   config: {
-    name: "gosuReply",
+    name: "gosu",
     version: "1.0",
     author: "Viết Công",
-    category: "events",
+    countDown: 0,
+    role: 0,
     description: {
-      vi: "Tự động reply khi chat gosu",
+      vi: "Tự động reply khi chat gosu/goso",
       en: "Auto reply when chat gosu/goso"
+    },
+    category: "fun",
+    guide: {
+      vi: "Tự động kích hoạt khi chat gosu hoặc goso",
+      en: "Auto trigger when chat gosu or goso"
     }
   },
 
   onStart: async function () {},
 
-  onChat: async function ({ api, event }) {
+  onChat: async function ({ api, event, message }) {
     const body = event.body ? event.body.toLowerCase().trim() : "";
     
     if (body.includes("gosu") || body.includes("su")) {
