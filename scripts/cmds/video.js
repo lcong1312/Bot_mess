@@ -24,14 +24,12 @@ module.exports = {
     vi: {
       missingLink: "⚠️ Vui lòng nhập link video!\nVí dụ: {pn} https://www.tiktok.com/@user/video/123456",
       downloading: "⏳ Đang tải video, vui lòng đợi...",
-      success: "✅ Tải video thành công!",
       error: "❌ Không thể tải video. Link có thể bị riêng tư hoặc không hợp lệ.",
       invalidLink: "❌ Link không hợp lệ. Hỗ trợ: TikTok, Facebook, YouTube, Instagram."
     },
     en: {
       missingLink: "⚠️ Please provide a video link!\nExample: {pn} https://www.tiktok.com/@user/video/123456",
       downloading: "⏳ Downloading video, please wait...",
-      success: "✅ Video downloaded successfully!",
       error: "❌ Cannot download video. Link may be private or invalid.",
       invalidLink: "❌ Invalid link. Supported: TikTok, Facebook, YouTube, Instagram."
     }
@@ -68,38 +66,45 @@ module.exports = {
         // API 1: tikwm.com - ổn định cho TikTok
         {
           url: `https://www.tikwm.com/api/?url=${encodeURIComponent(link)}`,
-          parser: (data) => data?.data?.play || data?.data?.hdplay || data?.data?.wmplay
+          parser: (data) => data?.data?.play || data?.data?.hdplay || data?.data?.wmplay,
+          titleParser: (data) => data?.data?.title
         },
         // API 2: tiktokio
         {
           url: `https://api.tiktokio.com/api/v1/download?url=${encodeURIComponent(link)}`,
-          parser: (data) => data?.data?.video || data?.video
+          parser: (data) => data?.data?.video || data?.video,
+          titleParser: (data) => data?.data?.title || data?.title
         },
         // API 3: ryzendesu
         {
           url: `https://api.ryzendesu.vip/api/downloader/alldown?url=${encodeURIComponent(link)}`,
-          parser: (data) => data?.data?.medias?.[0]?.url || data?.data?.video || data?.url
+          parser: (data) => data?.data?.medias?.[0]?.url || data?.data?.video || data?.url,
+          titleParser: (data) => data?.data?.title || data?.title
         },
         // API 4: tiklydown
         {
           url: `https://api.tiklydown.eu.org/api/download?url=${encodeURIComponent(link)}`,
-          parser: (data) => data?.video?.noWatermark || data?.video?.watermark
+          parser: (data) => data?.video?.noWatermark || data?.video?.watermark,
+          titleParser: (data) => data?.title
         },
         // API 5: cobalt
         {
           url: `https://co.wuk.sh/api/json`,
           method: 'POST',
           body: { url: link, vCodec: "h264", vQuality: "720", aFormat: "mp3" },
-          parser: (data) => data?.url
+          parser: (data) => data?.url,
+          titleParser: (data) => data?.title
         },
         // API 6: widipe
         {
           url: `https://widipe.com/download/alldown?url=${encodeURIComponent(link)}`,
-          parser: (data) => data?.result?.url || data?.url
+          parser: (data) => data?.result?.url || data?.url,
+          titleParser: (data) => data?.result?.title || data?.title
         }
       ];
 
       let videoUrl = null;
+      let videoTitle = null;
       let lastError = null;
 
       // Thử từng API cho đến khi tìm được video
@@ -129,6 +134,7 @@ module.exports = {
           if (response.data) {
             videoUrl = endpoint.parser(response.data);
             if (videoUrl) {
+              videoTitle = endpoint.titleParser(response.data);
               console.log(`[Video] Success with: ${endpoint.url}`);
               break;
             }
@@ -162,8 +168,9 @@ module.exports = {
       videoStream.data.pipe(writer);
 
       writer.on("finish", () => {
+        const replyBody = videoTitle ? `✅ ${videoTitle}` : "✅ Video";
         message.reply({
-          body: getLang("success"),
+          body: replyBody,
           attachment: fs.createReadStream(filePath)
         }, () => {
           try {

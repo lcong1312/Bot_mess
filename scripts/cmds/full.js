@@ -247,8 +247,9 @@ module.exports.onChat = async ({ api, event }) => {
     if (commandWords.some(cmd => body.includes(cmd))) return;
     
     if (event.type !== "message_reply" && mahmud.some(word => body.startsWith(word))) {
-      api.setMessageReaction("🪽", event.messageID, () => {}, true);
-      api.sendTypingIndicator(event.threadID, true);
+      try {
+        api.setMessageReaction("🪽", event.messageID, () => {}, true);
+      } catch (e) {}
       
       const message = body.split(" ").slice(1).join(" ").trim();
       
