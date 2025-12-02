@@ -1,6 +1,3 @@
-if (!global.client.busyList)
-	global.client.busyList = {};
-
 module.exports = {
 	config: {
 		name: "busy",

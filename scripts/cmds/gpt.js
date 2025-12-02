@@ -4,15 +4,11 @@ const maxStorageMessage = 4;
 
 if (!global.temp.openAIUsing)
 	global.temp.openAIUsing = {};
-if (!global.temp.openAIHistory)
-	global.temp.openAIHistory = {};
-
-const { openAIUsing, openAIHistory } = global.temp;
 
 module.exports = {
 	config: {
 		name: "gpt",
-		version: "1.5",
+		version: "1.6",
 		author: "NTKhang | Viết Công",
 		countDown: 5,
 		role: 0,
@@ -42,30 +38,30 @@ module.exports = {
 		}
 	},
 
-	onStart: async function ({ message, event, args, getLang, commandName }) {
+	onStart: async function ({ message, event, args, getLang, commandName, usersData }) {
 		switch (args[0]) {
 			case 'clear': {
-				openAIHistory[event.senderID] = [];
+				await usersData.set(event.senderID, [], "data.gptHistory");
 				return message.reply(getLang('clearHistory'));
 			}
 			default: {
 				if (!args[0])
 					return message.reply(getLang('invalidContent'));
 
-				if (openAIUsing[event.senderID])
+				if (global.temp.openAIUsing[event.senderID])
 					return message.reply(getLang("yourAreUsing"));
 
-				handleGpt(event, message, args, getLang, commandName);
+				handleGpt(event, message, args, getLang, commandName, usersData);
 			}
 		}
 	},
 
-	onReply: async function ({ Reply, message, event, args, getLang, commandName }) {
+	onReply: async function ({ Reply, message, event, args, getLang, commandName, usersData }) {
 		const { author } = Reply;
 		if (author != event.senderID)
 			return;
 
-		handleGpt(event, message, args, getLang, commandName);
+		handleGpt(event, message, args, getLang, commandName, usersData);
 	}
 };
 
@@ -90,21 +86,27 @@ async function askGpt(prompt, history) {
 	return response.data.choices[0].message.content;
 }
 
-async function handleGpt(event, message, args, getLang, commandName) {
+async function handleGpt(event, message, args, getLang, commandName, usersData) {
 	try {
-		openAIUsing[event.senderID] = true;
+		global.temp.openAIUsing[event.senderID] = true;
 
-		if (!openAIHistory[event.senderID] || !Array.isArray(openAIHistory[event.senderID]))
-			openAIHistory[event.senderID] = [];
+		// Lấy history từ database
+		const userData = await usersData.get(event.senderID);
+		let history = userData.data.gptHistory || [];
+		if (!Array.isArray(history)) history = [];
 
 		const prompt = args.join(' ');
-		const text = await askGpt(prompt, openAIHistory[event.senderID]);
+		const text = await askGpt(prompt, history);
 
-		openAIHistory[event.senderID].push({ role: 'user', content: prompt });
-		openAIHistory[event.senderID].push({ role: 'assistant', content: text });
+		history.push({ role: 'user', content: prompt });
+		history.push({ role: 'assistant', content: text });
 
-		if (openAIHistory[event.senderID].length > maxStorageMessage * 2)
-			openAIHistory[event.senderID] = openAIHistory[event.senderID].slice(-maxStorageMessage * 2);
+		// Giới hạn số lượng tin nhắn lưu trữ
+		if (history.length > maxStorageMessage * 2)
+			history = history.slice(-maxStorageMessage * 2);
+
+		// Lưu history vào database
+		await usersData.set(event.senderID, history, "data.gptHistory");
 
 		return message.reply(text, (err, info) => {
 			global.GoatBot.onReply.set(info.messageID, {
@@ -119,6 +121,6 @@ async function handleGpt(event, message, args, getLang, commandName) {
 		return message.reply(getLang('error', errorMessage));
 	}
 	finally {
-		delete openAIUsing[event.senderID];
+		delete global.temp.openAIUsing[event.senderID];
 	}
 }
