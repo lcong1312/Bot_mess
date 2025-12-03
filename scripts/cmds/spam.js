@@ -103,7 +103,16 @@ module.exports = {
       if (lowerBody === "công" || lowerBody === "cong") {
         return api.sendMessage("vip pro 😎", threadID, () => {}, messageID);
       }
-      
+      if (lowerBody === "đức" || lowerBody === "duc" || lowerBody === "gosu" || lowerBody === "nguyễn minh đức" || lowerBody === "nguyen minh duc") {
+        const chuiDuc = [
+          "Đức ngu vl",
+          "Gosu óc chó",
+          "Đức đần thế",
+          "Đức ngu như bò"
+        ];
+        const randomChui = chuiDuc[Math.floor(Math.random() * chuiDuc.length)];
+        return api.sendMessage(randomChui, threadID, () => {}, messageID);
+      }
       const replies = [
           "Đức ngu vl",
           "Gosu óc chó",
