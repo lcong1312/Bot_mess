@@ -99,89 +99,26 @@ module.exports = {
     
     if (body && body.trim()) {
       const lowerBody = body.toLowerCase().trim();
+      // Check nếu nhắn "Công", "Cong"
       if (lowerBody === "công" || lowerBody === "cong") {
         return api.sendMessage("vip pro 😎", threadID, () => {}, messageID);
       }
       
       const replies = [
-        // Chế giễu
-        "Bị ngu à",
-        "Đần thế",
-        "Gosu óc",
-        "Có trình không ?",
-        "Nói gì vậy trời 😂",
-        "Ủa rồi sao",
-        "Thế à, rồi sao nữa?",
-        "Nói như đúng rồi ấy",
-        "Ai hỏi ý kiến m chưa?",
-        "Tự nhiên nói",
-        "Ê ê, ai cho phép nói đấy",
-        "Nói ít thôi bạn ơi",
-        "Lại bạn à, mệt ghê",
-        "Spam gì nữa đây",
-        "Nói hoài không chán hả",
-        "Bớt nói đi nào",
-        "Im đi cho người ta nhờ",
-        "Nói nhiều quá trời",
-        "Lại m nữa hả 🙄",
-        "Chưa đủ drama à",
-        "Ơ kìa, lại xuất hiện",
-        "Ai kêu m nói đâu",
-        "Nói gì mà nói hoài vậy",
-        "Thôi đi bạn ơi",
-        "Mệt với bạn quá",
-        "Lại bạn, lại bạn",
-        "Nói xong chưa?",
-        "Còn gì nữa không?",
-        "Hết chưa đấy?",
-        "Xong chưa bạn ơi",
-        // Chửi
-        "Đ** mẹ m",
-        "Cút đi",
-        "Ngu vl",
-        "Óc chó",
-        "Đồ ngu",
-        "Ngu như bò",
-        "Não cá vàng à",
-        "Đần độn vl",
-        "Thằng ngu",
-        "Con ngu",
-        "Câm mẹ m đi",
-        "Im mẹ m đi",
-        "Biến đi",
-        "Ngu vcl",
-        "Đ** má",
-        "Thằng khùng",
-        "Con điên",
-        "Ngu như lợn",
-        "Óc bã đậu",
-        "Não tôm à",
-        "Đồ rác",
-        "Thằng rác",
-        "Vô dụng vl",
-        "Đồ vô dụng",
-        "Ngu thấy mẹ",
-        "Ngu thấy bà",
-        "Đ** mày",
-        "Cái l** m",
-        "Thằng chó",
-        "Con chó",
-        "Mày ngu lắm",
-        "Ngu quá trời",
-        "Đồ khùng",
-        "Thằng điên",
-        "Mày bị ngu à",
-        "Ngu như con c**",
-        // Kết hợp với tin nhắn gốc
-        body + " cái gì?",
-        body + "??? Ủa",
-        "\"" + body + "\" - Nói hay lắm 🤡",
-        "Lại \"" + body + "\" nữa à",
-        body + " hả, rồi sao",
-        "Ê " + body + " là sao? 😂",
-        body + " cái đ** gì",
-        "\"" + body + "\" - Ngu vl",
-        body + "? Ngu thế"
+          "Đức ngu vl",
+          "Gosu óc chó",
+          "Đức đần thế",
+          "Nguyễn Minh Đức ngu như bò",
+          "Gosu não cá vàng",
+          "Đức vô dụng vl",
+          "Gosu thằng rác",
+          "Đức mày ngu lắm",
+          "Gosu đồ khùng",
+          "Nguyễn Minh Đức thằng ngu",
+          "Đức câm mẹ m đi",
+          "Gosu biến đi",
+          "Đức đồ ngu",
+          "Gosu ngu vcl"
       ];
       
       const randomReply = replies[Math.floor(Math.random() * replies.length)];
