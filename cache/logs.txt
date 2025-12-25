@@ -281,3 +281,718 @@ SyntaxError: Unexpected end of input
   isGroup: [33mtrue[0m[90m,[0m
   participantIDs: [32m"Array(3)"[0m
 [90m}[0m
+[DEBUG] 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐁𝐨𝐭...
+📡 Web server running at http://localhost:3000
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Error: refresh token google api đã hết hạn hoặc bị thu hồi, vui lòng lấy lại token mới tại https://developers.google.com/oauthplayground/
+    at D:\bot mess\goat-bot-v2-\Goat.js:231:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[CMD LOADING] ^C
+[DEBUG] 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐁𝐨𝐭...
+📡 Web server running at http://localhost:3000
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Error: refresh token google api đã hết hạn hoặc bị thu hồi, vui lòng lấy lại token mới tại https://developers.google.com/oauthplayground/
+    at D:\bot mess\goat-bot-v2-\Goat.js:231:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐁𝐨𝐭...
+📡 Web server running at http://localhost:3000
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:25:47 25/12/2025[0m [91m CREDENTIALS:[0m Please provide a valid clientId in file D:\bot mess\Goat-bot-V2-\config.json
+[Goat.js] Exited with code 0
+[DEBUG] 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐁𝐨𝐭...
+📡 Web server running at http://localhost:3000
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:26:48 25/12/2025[0m [91m CREDENTIALS:[0m Please provide a valid clientId in file D:\bot mess\Goat-bot-V2-\config.json
+[Goat.js] Exited with code 0
+[DEBUG] 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐁𝐨𝐭...
+📡 Web server running at http://localhost:3000
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:30:11 25/12/2025[0m [92m GOOGLE_DRIVE:[0m Không có Google credentials, bỏ qua Google Drive API
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:30:11 25/12/2025[0m [92m GMAIL:[0m Không có Gmail credentials, bỏ qua setup Gmail
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:30:26 25/12/2025[0m [93m GOOGLE_DRIVE:[0m Google Drive API chưa được khởi tạo, bỏ qua tạo folder
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ]2;Goat Bot V2 - Made by NTKhang\
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Error: The module '\\?\D:\bot mess\Goat-bot-V2-\node_modules\canvas\build\Release\canvas.node'
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 93. This version of Node.js requires
+NODE_MODULE_VERSION 108. Please try re-compiling or re-installing
+the module (for instance, using `npm rebuild` or `npm install`).
+    at Module._extensions..node (node:internal/modules/cjs/loader:1460:18)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (D:\bot mess\Goat-bot-V2-\node_modules\canvas\lib\bindings.js:3:18)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12) {
+  code: 'ERR_DLOPEN_FAILED'
+}
+[DEBUG] 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐁𝐨𝐭...
+📡 Web server running at http://localhost:3000
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:39:48 25/12/2025[0m [92m GMAIL:[0m Không có Gmail credentials, bỏ qua setup Gmail
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] TypeError: Cannot read properties of undefined (reading 'checkAndCreateParentFolder')
+    at D:\bot mess\goat-bot-v2-\Goat.js:288:48
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐁𝐨𝐭...
+📡 Web server running at http://localhost:3000
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:08 25/12/2025[0m [92m GMAIL:[0m Không có Gmail credentials, bỏ qua setup Gmail
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ]2;Goat Bot V2 - Made by NTKhang\
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ─
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] 
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] GOATBOT V2
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] GoatBot V2@1.5.35- A simple Bot chat messenger use personal account
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Created by NTKhang | Viết Công with ♡
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Source code:
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ALL VERSIONS NOT RELEASED HERE ARE FAKE
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m START LOGGING IN [0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:10 25/12/2025[0m [92m LOGIN FACEBOOK:[0m Đang tiến hành đăng nhập
+[CMD LOADING] - Đang đăng nhập bằng cookie array
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:15 25/12/2025[0m [93m REFRESH COOKIE:[0m Bạn đã bật chế độ tự động làm mới cookie, nhưng bạn chưa cấu hình email và mật khẩu trong file config.json
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:15 25/12/2025[0m [92m LOGIN FACEBOOK:[0m Đăng nhập thành công
+[38;2;245;171;0m BOT INFO [0m
+[90m14:45:15 25/12/2025[0m [92m NODE VERSION:[0m v18.20.8
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:15 25/12/2025[0m [92m PROJECT VERSION:[0m 1.5.35
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:16 25/12/2025[0m [92m BOT ID:[0m 100095121630849 - null
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:16 25/12/2025[0m [92m PREFIX:[0m /
+[90m14:45:16 25/12/2025[0m [92m LANGUAGE:[0m vi
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:16 25/12/2025[0m [92m BOT NICK NAME:[0m Bot nè!
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:17 25/12/2025[0m [92m REFRESH FBSTATE:[0m Đã làm mới file account.txt
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] DATABASE
+[CMD LOADING] - Đang kết nối cơ sở dữ liệu MONGODB
+[CMD LOADING] (node:9368) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:27 25/12/2025[0m [92m MONGODB:[0m Đã kết nối cơ sở dữ liệu Mongodb thành công!
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:28 25/12/2025[0m [92m DATABASE:[0m Đã tải xong dữ liệu của 2 nhóm!
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:28 25/12/2025[0m [92m DATABASE:[0m Đã tải xong dữ liệu của 15 người dùng!
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m LOAD COMMANDS [0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m1[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m2[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m3[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m4[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m5[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m6[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m7[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m8[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m9[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m10[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m11[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m12[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m13[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m14[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m15[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m16[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m17[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m18[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m19[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m20[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m21[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m22[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m23[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m24[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m25[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m26[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m27[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m28[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m29[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m30[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m31[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m32[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m33[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m34[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m35[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m36[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m37[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m38[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m39[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m40[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m41[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m42[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m43[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m44[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m45[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m46[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m47[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m48[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m49[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m50[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m51[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m52[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m53[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m54[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m55[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m56[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m57[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m58[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m59[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m60[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m61[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m62[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m63[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m64[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m65[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m66[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m67[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m68[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m69[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m70[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m71[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m72[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m73[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m74[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m75[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m76[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m77[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m78[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m79[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m80[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m81[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m82[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m83[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m84[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m85[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m86[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m87[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m88[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m89[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m90[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m91[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m92[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m93[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m94[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m95[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m96[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m97[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m98[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m99[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m100[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m101[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m102[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m103[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m104[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m105[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m106[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m107[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m108[0m
+[CMD LOADING] [90m14:45:28 25/12/2025[0m [92m LOADED:[0m [32m109[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m110[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m111[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m112[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m113[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m114[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m115[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m116[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m117[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m118[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m119[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m120[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m121[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m122[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m123[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m124[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m125[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m126[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m127[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m128[0m
+[CMD LOADING] [90m14:45:29 25/12/2025[0m [92m LOADED:[0m [32m129[0m
+[CMD LOADING] [90m14:45:30 25/12/2025[0m [92m LOADED:[0m [32m130[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m LOAD COMMANDS EVENT [0m
+[CMD LOADING] [90m14:45:30 25/12/2025[0m [92m LOADED:[0m [32m1[0m
+[CMD LOADING] [90m14:45:30 25/12/2025[0m [92m LOADED:[0m [32m2[0m
+[CMD LOADING] [90m14:45:30 25/12/2025[0m [92m LOADED:[0m [32m3[0m
+[CMD LOADING] [90m14:45:30 25/12/2025[0m [92m LOADED:[0m [32m4[0m
+[CMD LOADING] [90m14:45:30 25/12/2025[0m [92m LOADED:[0m [32m5[0m
+[CMD LOADING] [90m14:45:30 25/12/2025[0m [92m LOADED:[0m [32m6[0m
+[CMD LOADING] [90m14:45:30 25/12/2025[0m [92m LOADED:[0m [32m7[0m
+[CMD LOADING] [90m14:45:30 25/12/2025[0m [92m LOADED:[0m [32m8[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] 
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m DASHBOARD [0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:30 25/12/2025[0m [91m DASHBOARD:[0m Đã xảy ra lỗi khi mở trang quản lý bot
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:30 25/12/2025[0m [91m DASHBOARD:[0m Error: Can't find text: "Goat.googleApiRefreshTokenExpired"
+    at module.exports (D:\bot mess\goat-bot-v2-\dashboard\app.js:74:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async D:\bot mess\goat-bot-v2-\bot\login\login.js:867:6
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m─[0m
+[90m14:45:30 25/12/2025[0m [38;2;235;103;52m ADMINBOT:[0m [1] 100057376711750 | Lê Viết Công
+[90m14:45:30 25/12/2025[0m [38;2;235;103;52m NOTIFICATION:[0m Currently there are some thieves who are editing the copyright of the source code and distributing it.
+[!] The source code should only be downloaded from the official github page: https://github.com/ntkhang03/Goat-Bot-V2
+[!] Thank you for using the project. Project created by ntkhang03 (https://github.com/ntkhang03)
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:30 25/12/2025[0m [38;2;235;103;52m SUCCESS:[0m Khởi chạy bot thành công, bắt đầu nhận tin nhắn từ người dùng
+[90m14:45:30 25/12/2025[0m [38;2;235;103;52m LOAD TIME:[0m 26s
+[38;2;245;171;0m COPYRIGHT [0m
+[1m[33mCOPYRIGHT:[0m[1m[37m [0m[1m[36mProject GoatBot v2 created by ntkhang03 (https://github.com/ntkhang03), please do not sell this source code or claim it as your own. Thank you![0m
+[38;2;245;171;0m─[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:30 25/12/2025[0m [92m LISTEN_MQTT:[0m Đã bật khởi động lại ListenMQTT sau mỗi 1h
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:45:30 25/12/2025[0m [92m BOT_STARTED:[0m Đã khởi động bot thành công, bắt đầu nhận tin nhắn từ người dùng
+[38;2;245;171;0m─[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [32mMESSAGE:[0m [90m{
+[0m  type: [32m"message"[0m[90m,[0m
+  senderID: [32m"100057376711750"[0m[90m,[0m
+  body: [32m"/ping"[0m[90m,[0m
+  threadID: [32m"1643843133247121"[0m[90m,[0m
+  messageID: [32m"mid.$gAAXXEQ4GDpGhhb4XA2bVHjJ_DJYI"[0m[90m,[0m
+  attachments: [][90m,[0m
+  mentions: {}[90m,[0m
+  timestamp: [32m"1766648762115"[0m[90m,[0m
+  isGroup: [33mtrue[0m[90m,[0m
+  participantIDs: [32m"Array(3)"[0m
+[90m}[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ReferenceError: config is not defined
+    at getTime (D:\bot mess\goat-bot-v2-\utils.js:243:31)
+    at onChat (D:\bot mess\goat-bot-v2-\bot\handler\handlerEvents.js:343:18)
+    at D:\bot mess\goat-bot-v2-\bot\handler\handlerAction.js:59:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [32mMESSAGE:[0m [90m{
+[0m  type: [32m"message"[0m[90m,[0m
+  senderID: [32m"100057376711750"[0m[90m,[0m
+  body: [32m"/help"[0m[90m,[0m
+  threadID: [32m"1643843133247121"[0m[90m,[0m
+  messageID: [32m"mid.$gAAXXEQ4GDpGhhb5H9GbVHj6-QiXQ"[0m[90m,[0m
+  attachments: [][90m,[0m
+  mentions: {}[90m,[0m
+  timestamp: [32m"1766648774644"[0m[90m,[0m
+  isGroup: [33mtrue[0m[90m,[0m
+  participantIDs: [32m"Array(3)"[0m
+[90m}[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ReferenceError: config is not defined
+    at getTime (D:\bot mess\goat-bot-v2-\utils.js:243:31)
+    at onChat (D:\bot mess\goat-bot-v2-\bot\handler\handlerEvents.js:343:18)
+    at D:\bot mess\goat-bot-v2-\bot\handler\handlerAction.js:59:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ReferenceError: config is not defined
+    at getTime (D:\bot mess\goat-bot-v2-\utils.js:243:31)
+    at onStart (D:\bot mess\goat-bot-v2-\bot\handler\handlerEvents.js:291:17)
+    at D:\bot mess\goat-bot-v2-\bot\handler\handlerAction.js:60:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [32mMESSAGE:[0m [90m{
+[0m  type: [32m"message"[0m[90m,[0m
+  senderID: [32m"100057376711750"[0m[90m,[0m
+  body: [32m"/up"[0m[90m,[0m
+  threadID: [32m"1643843133247121"[0m[90m,[0m
+  messageID: [32m"mid.$gAAXXEQ4GDpGhhb7z3GbVHmm2zsM3"[0m[90m,[0m
+  attachments: [][90m,[0m
+  mentions: {}[90m,[0m
+  timestamp: [32m"1766648818652"[0m[90m,[0m
+  isGroup: [33mtrue[0m[90m,[0m
+  participantIDs: [32m"Array(3)"[0m
+[90m}[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ReferenceError: config is not defined
+    at getTime (D:\bot mess\goat-bot-v2-\utils.js:243:31)
+    at onChat (D:\bot mess\goat-bot-v2-\bot\handler\handlerEvents.js:343:18)
+    at D:\bot mess\goat-bot-v2-\bot\handler\handlerAction.js:59:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ReferenceError: config is not defined
+    at getTime (D:\bot mess\goat-bot-v2-\utils.js:243:31)
+    at onStart (D:\bot mess\goat-bot-v2-\bot\handler\handlerEvents.js:291:17)
+    at D:\bot mess\goat-bot-v2-\bot\handler\handlerAction.js:60:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐁𝐨𝐭...
+📡 Web server running at http://localhost:3000
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:48:03 25/12/2025[0m [92m GMAIL:[0m Không có Gmail credentials, bỏ qua setup Gmail
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ]2;Goat Bot V2 - Made by NTKhang\
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ─
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] 
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] GOATBOT V2
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] GoatBot V2@1.5.35- A simple Bot chat messenger use personal account
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Created by NTKhang | Viết Công with ♡
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Source code: 
+ALL VERSIONS NOT RELEASED HERE ARE FAKE
+[38;2;245;171;0m START LOGGING IN [0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] AxiosError: read ECONNRESET
+    at AxiosError.from (D:\bot mess\goat-bot-v2-\node_modules\axios\dist\node\axios.cjs:836:14)
+    at RedirectableRequest.handleRequestError (D:\bot mess\goat-bot-v2-\node_modules\axios\dist\node\axios.cjs:3010:25)
+    at RedirectableRequest.emit (node:events:517:28)
+    at eventHandlers.<computed> (D:\bot mess\goat-bot-v2-\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:517:28)
+    at TLSSocket.socketErrorListener (node:_http_client:501:9)
+    at TLSSocket.emit (node:events:517:28)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  syscall: 'read',
+  code: 'ECONNRESET',
+  errno: -4077,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: AxiosHeaders {
+      Accept: 'application/json, text/plain, */*',
+      'User-Agent': 'axios/1.4.0',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'get',
+    url: 'https://raw.githubusercontent.com/ntkhang03/Goat-Bot-V2-Storage/main/tooOldVersions.txt',
+    data: undefined
+  },
+  request: <ref *1> Writable {
+    _writableState: WritableState {
+      objectMode: false,
+      highWaterMark: 16384,
+      finalCalled: false,
+      needDrain: false,
+      ending: false,
+      ended: false,
+      finished: false,
+      destroyed: false,
+      decodeStrings: true,
+      defaultEncoding: 'utf8',
+      length: 0,
+      writing: false,
+      corked: 0,
+      sync: true,
+      bufferProcessing: false,
+      onwrite: [Function: bound onwrite],
+      writecb: null,
+      writelen: 0,
+      afterWriteTickInfo: null,
+      buffered: [],
+      bufferedIndex: 0,
+      allBuffers: true,
+      allNoop: true,
+      pendingcb: 0,
+      constructed: true,
+      prefinished: false,
+      errorEmitted: false,
+      emitClose: true,
+      autoDestroy: true,
+      errored: null,
+      closed: false,
+      closeEmitted: false,
+      [Symbol(kOnFinished)]: []
+    },
+    _events: [Object: null prototype] {
+      response: [Function: handleResponse],
+      error: [Function: handleRequestError],
+      socket: [Function: handleRequestSocket]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/ntkhang03/Goat-Bot-V2-Storage/main/tooOldVersions.txt',
+      method: 'GET',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      lookup: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'raw.githubusercontent.com',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/ntkhang03/Goat-Bot-V2-Storage/main/tooOldVersions.txt'
+    },
+    _ended: true,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 0,
+    _requestBodyBuffers: [],
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'GET /ntkhang03/Goat-Bot-V2-Storage/main/tooOldVersions.txt HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'User-Agent: axios/1.4.0\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: raw.githubusercontent.com\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/ntkhang03/Goat-Bot-V2-Storage/main/tooOldVersions.txt',
+      _ended: false,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'raw.githubusercontent.com',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://raw.githubusercontent.com/ntkhang03/Goat-Bot-V2-Storage/main/tooOldVersions.txt',
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: read ECONNRESET
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:217:20) {
+    errno: -4077,
+    code: 'ECONNRESET',
+    syscall: 'read'
+  }
+}
+[DEBUG] 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐁𝐨𝐭...
+📡 Web server running at http://localhost:3000
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:50:57 25/12/2025[0m [92m GMAIL:[0m Không có Gmail credentials, bỏ qua setup Gmail
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ]2;Goat Bot V2 - Made by NTKhang\
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ─
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] 
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] GOATBOT V2
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] GoatBot V2@1.5.35- A simple Bot chat messenger use personal account
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Created by NTKhang | Viết Công with ♡
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Source code:
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] ALL VERSIONS NOT RELEASED HERE ARE FAKE
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m START LOGGING IN [0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:13 25/12/2025[0m [92m LOGIN FACEBOOK:[0m Đang tiến hành đăng nhập
+[CMD LOADING] - Đang đăng nhập bằng cookie array
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:19 25/12/2025[0m [93m REFRESH COOKIE:[0m Bạn đã bật chế độ tự động làm mới cookie, nhưng bạn chưa cấu hình email và mật khẩu trong file config.json
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:19 25/12/2025[0m [92m LOGIN FACEBOOK:[0m Đăng nhập thành công
+[38;2;245;171;0m BOT INFO [0m
+[90m14:51:19 25/12/2025[0m [92m NODE VERSION:[0m v18.20.8
+[90m14:51:19 25/12/2025[0m [92m PROJECT VERSION:[0m 1.5.35
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:19 25/12/2025[0m [92m BOT ID:[0m 100095121630849 - null
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:19 25/12/2025[0m [92m PREFIX:[0m /
+[90m14:51:19 25/12/2025[0m [92m LANGUAGE:[0m vi
+[90m14:51:19 25/12/2025[0m [92m BOT NICK NAME:[0m Bot nè!
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:20 25/12/2025[0m [92m REFRESH FBSTATE:[0m Đã làm mới file account.txt
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] DATABASE
+[CMD LOADING] - Đang kết nối cơ sở dữ liệu MONGODB
+[CMD LOADING] (node:6752) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:28 25/12/2025[0m [92m MONGODB:[0m Đã kết nối cơ sở dữ liệu Mongodb thành công!
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:30 25/12/2025[0m [92m DATABASE:[0m Đã tải xong dữ liệu của 2 nhóm!
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:30 25/12/2025[0m [92m DATABASE:[0m Đã tải xong dữ liệu của 15 người dùng!
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m LOAD COMMANDS [0m
+[CMD LOADING] [90m14:51:30 25/12/2025[0m [92m LOADED:[0m [32m1[0m
+[CMD LOADING] [90m14:51:30 25/12/2025[0m [92m LOADED:[0m [32m2[0m
+[CMD LOADING] [90m14:51:30 25/12/2025[0m [92m LOADED:[0m [32m3[0m
+[CMD LOADING] [90m14:51:30 25/12/2025[0m [92m LOADED:[0m [32m4[0m
+[CMD LOADING] [90m14:51:30 25/12/2025[0m [92m LOADED:[0m [32m5[0m
+[CMD LOADING] [90m14:51:30 25/12/2025[0m [92m LOADED:[0m [32m6[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m7[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m8[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m9[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m10[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m11[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m12[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m13[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m14[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m15[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m16[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m17[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m18[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m19[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m20[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m21[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m22[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m23[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m24[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m25[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m26[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m27[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m28[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m29[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m30[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m31[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m32[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m33[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m34[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m35[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m36[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m37[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m38[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m39[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m40[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m41[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m42[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m43[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m44[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m45[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m46[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m47[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m48[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m49[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m50[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m51[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m52[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m53[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m54[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m55[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m56[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m57[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m58[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m59[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m60[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m61[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m62[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m63[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m64[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m65[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m66[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m67[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m68[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m69[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m70[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m71[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m72[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m73[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m74[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m75[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m76[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m77[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m78[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m79[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m80[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m81[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m82[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m83[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m84[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m85[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m86[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m87[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m88[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m89[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m90[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m91[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m92[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m93[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m94[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m95[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m96[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m97[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m98[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m99[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m100[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m101[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m102[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m103[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m104[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m105[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m106[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m107[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m108[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m109[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m110[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m111[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m112[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m113[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m114[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m115[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m116[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m117[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m118[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m119[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m120[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m121[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m122[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m123[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m124[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m125[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m126[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m127[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m128[0m
+[CMD LOADING] [90m14:51:31 25/12/2025[0m [92m LOADED:[0m [32m129[0m
+[CMD LOADING] [90m14:51:32 25/12/2025[0m [92m LOADED:[0m [32m130[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m LOAD COMMANDS EVENT [0m
+[CMD LOADING] [90m14:51:32 25/12/2025[0m [92m LOADED:[0m [32m1[0m
+[CMD LOADING] [90m14:51:32 25/12/2025[0m [92m LOADED:[0m [32m2[0m
+[CMD LOADING] [90m14:51:32 25/12/2025[0m [92m LOADED:[0m [32m3[0m
+[CMD LOADING] [90m14:51:32 25/12/2025[0m [92m LOADED:[0m [32m4[0m
+[CMD LOADING] [90m14:51:32 25/12/2025[0m [92m LOADED:[0m [32m5[0m
+[CMD LOADING] [90m14:51:32 25/12/2025[0m [92m LOADED:[0m [32m6[0m
+[CMD LOADING] [90m14:51:32 25/12/2025[0m [92m LOADED:[0m [32m7[0m
+[CMD LOADING] [90m14:51:32 25/12/2025[0m [92m LOADED:[0m [32m8[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] 
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m DASHBOARD [0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:32 25/12/2025[0m [91m DASHBOARD:[0m Đã xảy ra lỗi khi mở trang quản lý bot
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:32 25/12/2025[0m [91m DASHBOARD:[0m Error: Can't find text: "Goat.googleApiRefreshTokenExpired"
+    at module.exports (D:\bot mess\goat-bot-v2-\dashboard\app.js:74:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async D:\bot mess\goat-bot-v2-\bot\login\login.js:867:6
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [38;2;245;171;0m─[0m
+[90m14:51:32 25/12/2025[0m [38;2;235;103;52m ADMINBOT:[0m [1] 100057376711750 | Lê Viết Công
+[90m14:51:32 25/12/2025[0m [38;2;235;103;52m NOTIFICATION:[0m Currently there are some thieves who are editing the copyright of the source code and distributing it.
+[!] The source code should only be downloaded from the official github page: https://github.com/ntkhang03/Goat-Bot-V2
+[!] Thank you for using the project. Project created by ntkhang03 (https://github.com/ntkhang03)
+[90m14:51:32 25/12/2025[0m [38;2;235;103;52m SUCCESS:[0m Khởi chạy bot thành công, bắt đầu nhận tin nhắn từ người dùng
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:32 25/12/2025[0m [38;2;235;103;52m LOAD TIME:[0m 39s
+[38;2;245;171;0m COPYRIGHT [0m
+[1m[33mCOPYRIGHT:[0m[1m[37m [0m[1m[36mProject GoatBot v2 created by ntkhang03 (https://github.com/ntkhang03), please do not sell this source code or claim it as your own. Thank you![0m
+[38;2;245;171;0m─[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:32 25/12/2025[0m [92m LISTEN_MQTT:[0m Đã bật khởi động lại ListenMQTT sau mỗi 1h
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:32 25/12/2025[0m [92m BOT_STARTED:[0m Đã khởi động bot thành công, bắt đầu nhận tin nhắn từ người dùng
+[38;2;245;171;0m─[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [32mMESSAGE:[0m [90m{
+[0m  type: [32m"message"[0m[90m,[0m
+  senderID: [32m"100057376711750"[0m[90m,[0m
+  body: [32m"/up"[0m[90m,[0m
+  threadID: [32m"1643843133247121"[0m[90m,[0m
+  messageID: [32m"mid.$gAAXXEQ4GDpGhhcOE3GbVH43tRTlc"[0m[90m,[0m
+  attachments: [][90m,[0m
+  mentions: {}[90m,[0m
+  timestamp: [32m"1766649117916"[0m[90m,[0m
+  isGroup: [33mtrue[0m[90m,[0m
+  participantIDs: [32m"Array(3)"[0m
+[90m}[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:51:57 25/12/2025[0m [92m CALL COMMAND:[0m status | Lê Viết Công | 100057376711750 | 1643843133247121 |
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] Message with attachment sent successfully: {
+  threadID: '1643843133247121',
+  messageID: 'mid.$gAAXXEQ4GDpGhhcOLDWbVH49EckAz',
+  timestamp: 1766649119501
+}
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [32mMESSAGE:[0m [90m{
+[0m  type: [32m"message"[0m[90m,[0m
+  senderID: [32m"100057376711750"[0m[90m,[0m
+  body: [32m"/help"[0m[90m,[0m
+  threadID: [32m"1643843133247121"[0m[90m,[0m
+  messageID: [32m"mid.$gAAXXEQ4GDpGhhcQR4GbVH7Eso5dK"[0m[90m,[0m
+  attachments: [][90m,[0m
+  mentions: {}[90m,[0m
+  timestamp: [32m"1766649154016"[0m[90m,[0m
+  isGroup: [33mtrue[0m[90m,[0m
+  participantIDs: [32m"Array(3)"[0m
+[90m}[0m
+[𝐀𝐫𝐚𝐟𝐚𝐭 𝐒𝐚𝐫𝐝𝐞𝐫] [90m14:52:33 25/12/2025[0m [92m CALL COMMAND:[0m help | Lê Viết Công | 100057376711750 | 1643843133247121 |

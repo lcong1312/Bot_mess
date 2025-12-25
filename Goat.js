@@ -220,42 +220,44 @@ if (config.autoRestart) {
 	// ———————————————— SETUP MAIL ———————————————— //
 	const { gmailAccount } = config.credentials;
 	const { email, clientId, clientSecret, refreshToken } = gmailAccount;
-	const OAuth2 = google.auth.OAuth2;
-	const OAuth2_client = new OAuth2(clientId, clientSecret);
-	OAuth2_client.setCredentials({ refresh_token: refreshToken });
-	let accessToken;
-	try {
-		accessToken = await OAuth2_client.getAccessToken();
-	}
-	catch (err) {
-		throw new Error(getText("Goat", "googleApiTokenExpired"));
-	}
-	const transporter = nodemailer.createTransport({
-		host: 'smtp.gmail.com',
-		service: 'Gmail',
-		auth: {
-			type: 'OAuth2',
-			user: email,
-			clientId,
-			clientSecret,
-			refreshToken,
-			accessToken
+	
+	let transporter = null;
+	let accessToken = null;
+	
+	// Chỉ setup Gmail nếu có đầy đủ credentials
+	if (email && clientId && clientSecret && refreshToken) {
+		try {
+			const OAuth2 = google.auth.OAuth2;
+			const OAuth2_client = new OAuth2(clientId, clientSecret);
+			OAuth2_client.setCredentials({ refresh_token: refreshToken });
+			accessToken = await OAuth2_client.getAccessToken();
+			
+			transporter = nodemailer.createTransporter({
+				host: 'smtp.gmail.com',
+				service: 'Gmail',
+				auth: {
+					type: 'OAuth2',
+					user: email,
+					clientId,
+					clientSecret,
+					refreshToken,
+					accessToken
+				}
+			});
+			
+			log.info("GMAIL", "Gmail setup thành công");
+		} catch (err) {
+			log.warn("GMAIL", "Gmail setup thất bại, bỏ qua:", err.message);
+			transporter = null;
 		}
-	});
-
+	} else {
+		log.info("GMAIL", "Không có Gmail credentials, bỏ qua setup Gmail");
+	}
 	async function sendMail({ to, subject, text, html, attachments }) {
-		const transporter = nodemailer.createTransport({
-			host: 'smtp.gmail.com',
-			service: 'Gmail',
-			auth: {
-				type: 'OAuth2',
-				user: email,
-				clientId,
-				clientSecret,
-				refreshToken,
-				accessToken
-			}
-		});
+		if (!transporter) {
+			throw new Error("Gmail chưa được cấu hình");
+		}
+		
 		const mailOptions = {
 			from: email,
 			to,
@@ -282,9 +284,6 @@ if (config.autoRestart) {
 			colors.hex("#eb6a07", version),
 			colors.hex("#eb6a07", "node update")
 		));
-	// —————————— CHECK FOLDER GOOGLE DRIVE —————————— //
-	const parentIdGoogleDrive = await utils.drive.checkAndCreateParentFolder("GoatBot");
-	utils.drive.parentID = parentIdGoogleDrive;
 	// ———————————————————— LOGIN ———————————————————— //
 	require(`./bot/login/login${NODE_ENV === 'development' ? '.dev.js' : '.js'}`);
 })();

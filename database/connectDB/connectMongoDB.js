@@ -6,6 +6,9 @@ module.exports = async function (uriConnect) {
 	const dashBoardModel = require("../models/mongodb/userDashBoard.js");
 	const globalModel = require("../models/mongodb/global.js");
 
+	// Tắt cảnh báo strictQuery
+	mongoose.set('strictQuery', false);
+
 	await mongoose.connect(uriConnect, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true
